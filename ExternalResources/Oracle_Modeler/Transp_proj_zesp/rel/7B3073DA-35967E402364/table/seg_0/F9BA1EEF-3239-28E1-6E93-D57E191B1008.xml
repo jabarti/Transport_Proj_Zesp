@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F9BA1EEF-3239-28E1-6E93-D57E191B1008" name="Osoby">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-10-28 12:21:39 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="C1473491-A04B-F0F5-8F9E-2D97CCFB181D">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-10-28 12:37:29 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<use>0</use>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5CF5AD66-CFDE-03DC-25D0-D7EF110E9F35" name="Osoby_PK">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-10-28 12:38:08 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C1473491-A04B-F0F5-8F9E-2D97CCFB181D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

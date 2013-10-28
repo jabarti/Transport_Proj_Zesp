@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="643F716B-624C-2A02-7996-32A457AB140F" mainViewID="5C0D2BBA-2A59-5326-CF32-F6F4739648BE">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-10-28 12:16:15 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Transp_proj_zesp" id="26CA049C-1358-BD01-8BBE-7ED18F268DD2" version="3.5">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-10-28 12:16:15 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>26CA049C-1358-BD01-8BBE-7ED18F268DD2</designId>
+</OSDM_Design>

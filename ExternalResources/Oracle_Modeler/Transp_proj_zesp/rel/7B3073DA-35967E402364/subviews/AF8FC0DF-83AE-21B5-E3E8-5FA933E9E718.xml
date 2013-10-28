@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Diagram class="oracle.dbtools.crest.swingui.relational.DPVRelational" name="Relational_1" id="AF8FC0DF-83AE-21B5-E3E8-5FA933E9E718">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-10-28 12:21:39 UTC</createdTime>
+<autoRoute>false</autoRoute>
+<boxInbox>true</boxInbox>
+<showLegend>false</showLegend>
+<showLabels>false</showLabels>
+<showRelAttributes>false</showRelAttributes>
+<showGrid>false</showGrid>
+<diagramColor>-1</diagramColor>
+<display>false</display>
+<notation>1</notation>
+<objectViews>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="3D03F193-1991-82B5-DB40-6822802A5FD8" otype="Table" vid="42A91F4A-1FC3-E204-DCC0-9987A6956A6C">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="415" y="96" width="170" height="110"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="F9BA1EEF-3239-28E1-6E93-D57E191B1008" otype="Table" vid="ADB4C292-DD15-F5D0-42C4-EF03C5DA122F">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="44" y="29" width="199" height="143"/>
+</OView>
+</objectViews>
+</Diagram>

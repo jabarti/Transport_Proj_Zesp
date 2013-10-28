@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="648EF4E3-AA76-38D6-A4DE-A5B47BF09BF6" name="Osoba">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-10-28 12:41:52 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<engineerTo>
+<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="69E7038C-8268-A136-34C7-C47BD238AED8">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-10-28 12:42:35 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<engineerTo>
+<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+</Attribute>
+<Attribute name="Imie" id="4EAB937F-3497-D1A2-F5BF-C00CBA079DC5">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-10-28 12:42:09 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<engineerTo>
+<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>21</dataTypeSize>
+</Attribute>
+<Attribute name="Nazwisko" id="8B2BA715-2E98-FF29-6411-E95449AB9DCB">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-10-28 12:44:52 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<engineerTo>
+<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>35 CHAR</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="750B2F20-125C-B47C-9B83-FD14119DD965" name="Osoba PK">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-10-28 12:42:24 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<engineerTo>
+<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>69E7038C-8268-A136-34C7-C47BD238AED8</newElementsIDs>
+</identifier>
+</identifiers>
+</Entity>
