@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0D02963D-39D6-807E-42C6-EC430A1BD0B3" name="Pracownik">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="292D4248-D18A-74A9-5E14-1E7E0AF47C7A" name="Pojazd">
 <createdBy>Bartek</createdBy>
-<createdTime>2013-10-28 12:45:31 UTC</createdTime>
+<createdTime>2013-11-07 20:47:34 UTC</createdTime>
 <ownerDesignName>Transp_proj_zesp</ownerDesignName>
 <engineerTo>
 <item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
@@ -11,14 +11,13 @@
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
 <growthPercent>0</growthPercent>
 <growthType>Year</growthType>
-<hierarchicalParent>648EF4E3-AA76-38D6-A4DE-A5B47BF09BF6</hierarchicalParent>
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id" id="47A5B4ED-DD67-E1D3-7765-95FADE904A9F">
+<Attribute name="ID" id="C3D437D7-0938-C558-146E-F9A9AEA0AA0A">
 <createdBy>Bartek</createdBy>
-<createdTime>2013-11-07 21:01:44 UTC</createdTime>
+<createdTime>2013-11-07 20:47:45 UTC</createdTime>
 <ownerDesignName>Transp_proj_zesp</ownerDesignName>
 <engineerTo>
 <item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
@@ -26,12 +25,12 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT025</logicalDatatype>
 <dataTypeSize>6</dataTypeSize>
 </Attribute>
-<Attribute name="Uprawnienia" id="BC250546-3D78-635F-8949-8C6EF76290F8">
+<Attribute name="Marka" id="DCDCFEA8-6CD2-FF84-E10E-3240A33FB734">
 <createdBy>Bartek</createdBy>
-<createdTime>2013-11-07 21:01:58 UTC</createdTime>
+<createdTime>2013-11-07 20:48:23 UTC</createdTime>
 <ownerDesignName>Transp_proj_zesp</ownerDesignName>
 <engineerTo>
 <item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
@@ -40,11 +39,11 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>6</dataTypeSize>
+<dataTypeSize>10 CHAR</dataTypeSize>
 </Attribute>
-<Attribute name="Stanowisko" id="5C737FC3-AB6C-9C25-6501-A1A62D6F3C30">
+<Attribute name="Model" id="A09274A7-14FE-72D4-BFB3-A19721415900">
 <createdBy>Bartek</createdBy>
-<createdTime>2013-11-07 21:02:22 UTC</createdTime>
+<createdTime>2013-11-07 20:48:50 UTC</createdTime>
 <ownerDesignName>Transp_proj_zesp</ownerDesignName>
 <engineerTo>
 <item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
@@ -53,11 +52,11 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>10</dataTypeSize>
+<dataTypeSize>10 CHAR</dataTypeSize>
 </Attribute>
-<Attribute name="Pensja" id="3FE6018A-0F01-809E-8247-0D2A9F0B62CF">
+<Attribute name="Poj_sil" id="2DE9A01F-4CA2-4C84-3104-BBD8AA5D5E4F">
 <createdBy>Bartek</createdBy>
-<createdTime>2013-11-07 21:02:43 UTC</createdTime>
+<createdTime>2013-11-07 20:49:11 UTC</createdTime>
 <ownerDesignName>Transp_proj_zesp</ownerDesignName>
 <engineerTo>
 <item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
@@ -67,10 +66,26 @@
 <use>1</use>
 <logicalDatatype>LOGDT021</logicalDatatype>
 <dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
 </Attribute>
-<Attribute name="telefon_sl" id="F5DCBEE1-0969-C81E-A98D-4589056DD141">
+<Attribute name="Ladownosc" id="A33F21BA-63CF-B042-82C5-C8EA627BFE25">
 <createdBy>Bartek</createdBy>
-<createdTime>2013-11-07 21:03:05 UTC</createdTime>
+<createdTime>2013-11-07 20:49:42 UTC</createdTime>
+<comment>in kg</comment>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<engineerTo>
+<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+</Attribute>
+<Attribute name="Nr rej" id="A70971BC-0BA4-D06D-7512-059FF59F9C5C">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-11-07 20:50:42 UTC</createdTime>
 <ownerDesignName>Transp_proj_zesp</ownerDesignName>
 <engineerTo>
 <item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
@@ -79,20 +94,7 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>15</dataTypeSize>
-</Attribute>
-<Attribute name="email_sl" id="A409FF35-C8AD-9691-60CA-8A69C6F82BD2">
-<createdBy>Bartek</createdBy>
-<createdTime>2013-11-07 21:03:50 UTC</createdTime>
-<ownerDesignName>Transp_proj_zesp</ownerDesignName>
-<engineerTo>
-<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>45</dataTypeSize>
+<dataTypeSize>7 CHAR</dataTypeSize>
 </Attribute>
 </attributes>
 </Entity>

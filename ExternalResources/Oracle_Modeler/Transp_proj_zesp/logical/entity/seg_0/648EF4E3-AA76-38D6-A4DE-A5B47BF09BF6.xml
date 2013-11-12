@@ -52,6 +52,124 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>35 CHAR</dataTypeSize>
 </Attribute>
+<Attribute name="Adres_ul" id="0EA22DCC-053E-F2CC-713D-390D62088690">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-11-07 20:56:25 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<engineerTo>
+<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+</Attribute>
+<Attribute name="Adres_kod" id="7F00AE69-E8B9-77AC-50B9-FED33D677C6A">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-11-07 20:57:08 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<engineerTo>
+<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>6</dataTypeSize>
+</Attribute>
+<Attribute name="Adres_miasto" id="37AE2BC5-930D-5167-DA46-B00BCBFFAAEA">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-11-07 20:57:34 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<engineerTo>
+<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+</Attribute>
+<Attribute name="Adres_kraj" id="B27D5BEA-3A50-E8BC-EF69-3C941B7852DF">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-11-07 20:58:04 UTC</createdTime>
+<comment>default = POLAND</comment>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<engineerTo>
+<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+</Attribute>
+<Attribute name="PESEL" id="0683E243-21DD-F696-DFFD-5E81E189464E">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-11-07 20:58:36 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<engineerTo>
+<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+</Attribute>
+<Attribute name="dow_os" id="BB227C85-59F1-667B-BE63-B9CC71865E99">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-11-07 20:59:05 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<engineerTo>
+<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+</Attribute>
+<Attribute name="tel_1" id="2B3F77FD-BB34-2A35-B85D-B3D82E332CBA">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-11-07 20:59:44 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<engineerTo>
+<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+</Attribute>
+<Attribute name="tel_2" id="77FDF5F1-A509-16CC-1838-F79B762A50F5">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-11-07 21:00:42 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<engineerTo>
+<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+</Attribute>
+<Attribute name="email" id="51AE94E1-194E-8755-AAC2-9D8466E69859">
+<createdBy>Bartek</createdBy>
+<createdTime>2013-11-07 21:05:06 UTC</createdTime>
+<ownerDesignName>Transp_proj_zesp</ownerDesignName>
+<engineerTo>
+<item key="7B3073DA-4508-A444-DA1C-35967E402364" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>35</dataTypeSize>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="750B2F20-125C-B47C-9B83-FD14119DD965" name="Osoba PK">

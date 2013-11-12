@@ -14,23 +14,27 @@
 <objectViews>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="0D02963D-39D6-807E-42C6-EC430A1BD0B3" otype="Entity" vid="333E7DCE-343F-8893-D4A9-FD7C9A8E75EF">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="44" y="89" width="268" height="213"/>
+<bounds x="17" y="217" width="432" height="213"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="292D4248-D18A-74A9-5E14-1E7E0AF47C7A" otype="Entity" vid="FFF3FA0D-225E-AC0A-116B-D443738EA89D">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="552" y="14" width="170" height="167"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="407C575D-F435-CFCC-5B73-F0E57A33E1EB" otype="Entity" vid="D9B3C741-2822-0E5B-74EA-1722C97E3E05">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="53" y="135" width="119" height="157"/>
+<bounds x="156" y="263" width="119" height="157"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="648EF4E3-AA76-38D6-A4DE-A5B47BF09BF6" otype="Entity" vid="F4050BC6-4597-8804-20B1-AED9813398C2">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="34" y="14" width="587" height="298"/>
+<bounds x="10" y="12" width="458" height="428"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="663A910D-A3D9-D6C1-9D4D-D737A82774BF" otype="Entity" vid="A927AE78-74BE-029C-0B5D-46FF3FE479E7">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="326" y="86" width="267" height="216"/>
+<bounds x="191" y="57" width="267" height="77"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="E5678223-FD15-5E51-DEF3-4238D6AC0D36" otype="Entity" vid="F1BF284D-F313-7E8F-9714-6D36B4FAEAEF">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="179" y="134" width="123" height="158"/>
+<bounds x="306" y="262" width="123" height="158"/>
 </OView>
 </objectViews>
 <connectors>

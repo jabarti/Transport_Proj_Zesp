@@ -1,12 +1,13 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.logical.LogicalDesign>
-   <object objectType="Entity" objectID="0D02963D-39D6-807E-42C6-EC430A1BD0B3" name="Pracownik" seqName="seg_0"/>
    <object objectType="Entity" objectID="407C575D-F435-CFCC-5B73-F0E57A33E1EB" name="Admin" seqName="seg_0"/>
-   <object objectType="Entity" objectID="648EF4E3-AA76-38D6-A4DE-A5B47BF09BF6" name="Osoba" seqName="seg_0"/>
-   <object objectType="Entity" objectID="663A910D-A3D9-D6C1-9D4D-D737A82774BF" name="Klient" seqName="seg_0"/>
    <object objectType="Entity" objectID="E5678223-FD15-5E51-DEF3-4238D6AC0D36" name="Fizol" seqName="seg_0"/>
+   <object objectType="Entity" objectID="663A910D-A3D9-D6C1-9D4D-D737A82774BF" name="Klient" seqName="seg_0"/>
+   <object objectType="Entity" objectID="648EF4E3-AA76-38D6-A4DE-A5B47BF09BF6" name="Osoba" seqName="seg_0"/>
+   <object objectType="Entity" objectID="292D4248-D18A-74A9-5E14-1E7E0AF47C7A" name="Pojazd" seqName="seg_0"/>
+   <object objectType="Entity" objectID="0D02963D-39D6-807E-42C6-EC430A1BD0B3" name="Pracownik" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="E2F540D3-9D3D-DA7D-A0F7-097B6DAA10F1" name="Hierarchy_1" seqName="seg_0"/>
    <object objectType="Hierarchy relation" objectID="565D8E1E-4AA9-EF9A-12E9-C4F3FCD6C242" name="Hierarchy_2" seqName="seg_0"/>
    <object objectType="Hierarchy relation" objectID="64222EC9-3440-73AA-B145-7DBAC8071BFA" name="Hierarchy_4" seqName="seg_0"/>
    <object objectType="Hierarchy relation" objectID="CB1D7532-8A75-39FA-4680-FDC9CB202C2F" name="Hierarchy_5" seqName="seg_0"/>
-   <object objectType="Hierarchy relation" objectID="E2F540D3-9D3D-DA7D-A0F7-097B6DAA10F1" name="Hierarchy_1" seqName="seg_0"/>
 </oracle.dbtools.crest.model.design.logical.LogicalDesign>
