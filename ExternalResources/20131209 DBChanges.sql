@@ -12,7 +12,8 @@ USE `apipo` ;
 DROP TABLE IF EXISTS `apipo`.`osoba` ;
 
 CREATE  TABLE IF NOT EXISTS `apipo`.`osoba` (
-  `PESEL` VARCHAR(11) NOT NULL ,
+  `ID_Osoba` INT NOT NULL AUTO_INCREMENT ,
+  `PESEL` VARCHAR(11) NULL ,
   `Imie` VARCHAR(15) NOT NULL ,
   `Imie2` VARCHAR(15) NULL DEFAULT NULL ,
   `Nazwisko` VARCHAR(25) NOT NULL ,
@@ -25,13 +26,39 @@ CREATE  TABLE IF NOT EXISTS `apipo`.`osoba` (
   `telefon stacjonarny` VARCHAR(15) NULL DEFAULT NULL ,
   `FAX` VARCHAR(15) NULL DEFAULT NULL ,
   `email` VARCHAR(45) NULL DEFAULT NULL ,
-  `Rola` VARCHAR(6) NULL DEFAULT 'Klient' ,
   `Plec` VARCHAR(1) NOT NULL DEFAULT 'M' ,
   `Data urodzenia` DATE NULL DEFAULT NULL ,
-  PRIMARY KEY (`PESEL`) ,
-  UNIQUE INDEX `PESEL_UNIQUE` (`PESEL` ASC) )
+  PRIMARY KEY (`ID_Osoba`) ,
+  UNIQUE INDEX `PESEL_UNIQUE` (`PESEL` ASC) ,
+  UNIQUE INDEX `ID_Osoba_UNIQUE` (`ID_Osoba` ASC) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `apipo`.`Zlecenie`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `apipo`.`Zlecenie` ;
+
+CREATE  TABLE IF NOT EXISTS `apipo`.`Zlecenie` (
+  `ID_Zlecenia` INT NOT NULL AUTO_INCREMENT ,
+  `osoba_ID_Osoba` INT NULL ,
+  `email` VARCHAR(45) NOT NULL ,
+  `telefon` VARCHAR(45) NOT NULL ,
+  `Adres_ul_1` VARCHAR(45) NOT NULL ,
+  `Adres_kod_1` VARCHAR(6) NOT NULL ,
+  `Adres_miast_1` VARCHAR(45) NOT NULL ,
+  `Adres_ul_2` VARCHAR(45) NOT NULL ,
+  `Adres_kod_2` VARCHAR(6) NOT NULL ,
+  `Adres_miast_2` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`ID_Zlecenia`) ,
+  INDEX `fk_Zlecenie_osoba1_idx` (`osoba_ID_Osoba` ASC) ,
+  CONSTRAINT `fk_Zlecenie_osoba1`
+    FOREIGN KEY (`osoba_ID_Osoba` )
+    REFERENCES `apipo`.`osoba` (`ID_Osoba` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -40,6 +67,7 @@ DEFAULT CHARACTER SET = utf8;
 DROP TABLE IF EXISTS `apipo`.`pojazd` ;
 
 CREATE  TABLE IF NOT EXISTS `apipo`.`pojazd` (
+  `ID_Pojazdu` INT NOT NULL AUTO_INCREMENT ,
   `Nr_rej` VARCHAR(8) NOT NULL ,
   `Typ_Pojazdu_FK` VARCHAR(7) NOT NULL DEFAULT 'TIR 44t' COMMENT 'TIR 44t\nTIR 25t\ndo3,5t\nod3,5t' ,
   `VIN` VARCHAR(17) NULL DEFAULT NULL ,
@@ -56,9 +84,45 @@ CREATE  TABLE IF NOT EXISTS `apipo`.`pojazd` (
   `Wlasciciel_NIP_FK` VARCHAR(10) NULL DEFAULT NULL ,
   `Status dostepnosci` VARCHAR(10) NOT NULL DEFAULT 'OCZEKUJE' COMMENT 'aktywny = wykonuje zlecenie\noczekuje = oczekuje na zlecenie\nnieaktywny = remont itp. ' ,
   `Lokalizacja` ENUM('baza','trasa','inne') NOT NULL DEFAULT 'baza' COMMENT 'trasa / baza / inne' ,
-  PRIMARY KEY (`Nr_rej`, `Typ_Pojazdu_FK`) )
+  `ID_Zlecenia` INT NULL ,
+  `ID_Osoba` INT NOT NULL ,
+  PRIMARY KEY (`ID_Pojazdu`) ,
+  INDEX `fk_pojazd_Zlecenie1_idx` (`ID_Zlecenia` ASC) ,
+  UNIQUE INDEX `Nr_rej_UNIQUE` (`Nr_rej` ASC) ,
+  INDEX `fk_pojazd_osoba1_idx` (`ID_Osoba` ASC) ,
+  CONSTRAINT `fk_pojazd_Zlecenie1`
+    FOREIGN KEY (`ID_Zlecenia` )
+    REFERENCES `apipo`.`Zlecenie` (`ID_Zlecenia` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_pojazd_osoba1`
+    FOREIGN KEY (`ID_Osoba` )
+    REFERENCES `apipo`.`osoba` (`ID_Osoba` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `apipo`.`Login`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `apipo`.`Login` ;
+
+CREATE  TABLE IF NOT EXISTS `apipo`.`Login` (
+  `ID_Osoba` INT NOT NULL ,
+  `login` VARCHAR(45) NOT NULL ,
+  `Password` VARCHAR(45) NOT NULL ,
+  `Uprawnienie` VARCHAR(45) NOT NULL DEFAULT 'enum(\'admin\',\'manager\',\'pracownik\',\'klient\')' ,
+  PRIMARY KEY (`ID_Osoba`) ,
+  UNIQUE INDEX `login_UNIQUE` (`login` ASC) ,
+  INDEX `fk_Login_osoba_idx` (`ID_Osoba` ASC) ,
+  CONSTRAINT `fk_Login_osoba`
+    FOREIGN KEY (`ID_Osoba` )
+    REFERENCES `apipo`.`osoba` (`ID_Osoba` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 USE `apipo` ;
 

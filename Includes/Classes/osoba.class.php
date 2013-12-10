@@ -28,10 +28,10 @@ class osoba {
      * @param	Integer	id			
     //*/
 
-    function gc_picture($id_osoba=0)
+    function Osoba($id_osoba=0)
     {
-		if ($this->id_osoba = $id) {
-			$result = mysql_query('SELECT * FROM osoba WHERE id='.$id);
+		if ($id_osoba) {
+			$result = mysql_query('SELECT * FROM osoba WHERE PESEL='.$id_osoba);
 			$row = mysql_fetch_assoc($result);
 			mysql_free_Result($result);
 			if ($row) {
