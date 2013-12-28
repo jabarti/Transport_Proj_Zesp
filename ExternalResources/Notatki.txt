@@ -1,0 +1,1 @@
+﻿MOżna to zrobić tak, że kalsa odbiera array ,  a potem do tego sparsowanego arraya wchodza insert array[0], array[1] itd
