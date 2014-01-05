@@ -1,5 +1,5 @@
 *~
 *.exe
 *.[oa]
-/nbproject
-/htdocs/DB_Connection.php
+nbproject
+htdocs/DB_Connection.php
