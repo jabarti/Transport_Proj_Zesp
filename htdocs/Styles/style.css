@@ -1,8 +1,13 @@
 ﻿body
 {
-background-color:#d0e4fe;
+background-color:#d0e4fe;/**/
 width: 84%;
 allign: center;
+   /*background: url(../pictures/134.jpg) no-repeat center center fixed; /**/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 div.cleaner {
@@ -20,12 +25,25 @@ p.green {
 color:green;
 }
 
+#footer {
+	background: blue;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	font-weight: bold;
+	/*position: relative; height: 170px;*/
+}
 
 div.guziki {
 position:fixed;
 top:30px;
 right:5px;
 background: red;
+/*background: url(../pictures/no_euro.png) no-repeat center center fixed; /**/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 width:180px;
 padding:5px;
 border:2px solid black;

@@ -1,26 +1,53 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Główna</title>
-        <link rel="shortcut icon" href="../files/pictures/favicon_no_euro.ico" type="image/x-icon"/>
-	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<link rel="Stylesheet" type="text/css" href="Styles/style.css" />
-    </head>
-    <body>
 <?php
-    ob_start();
-    require_once("common.inc.php");
-    echo STYLES_PATH.DIRECTORY_SEPARATOR.'style.css'.'<br>';
-    echo CLASSES_PATH.DIRECTORY_SEPARATOR.'osoba.class.php';
-    //include CLASSES_PATH.DIRECTORY_SEPARATOR.'osoba.class.php';
-    //InitPage();
-    
-    include 'DB_Connection.php';
-    include 'buttons.php';
- 
+require_once "common.inc.php";
+require_once VIEWS_PATH.DIRECTORY_SEPARATOR.'header.php';
+echo "<br>START index.php<br>=================================<br>";
+if (isset($_SESSION['count'])){
+    $_SESSION['count']++;
+    echo '<br>linia: '.__LINE__.'$_SESSION[\'count\']: '.$_SESSION['count'].'<br>';
 
+}
+
+if (isset($_POST['uzytkownik'])){
+    echo '<br>linia: '.__LINE__.' '.$_POST['uzytkownik'];
+}
+if (isset($_SESSION['uzytk'])){
+    echo '<br>linia: '.__LINE__.' '.$_SESSION['uzytk'];
+}
+
+switch ($view_name){
+    case 'login':
+        echo '<br>linia: '.__LINE__.' '.$view_name;
+        break;
+    default:
+        echo '<br>linia: '.__LINE__.' '.$view_name;
+        break; 
+}
+
+//echo 'Logged: '.Logged();
+
+if(!Logged())
+	{
+            echo '<br>linia: '.__LINE__.' You are NOT logged';
+            include VIEWS_PATH.DIRECTORY_SEPARATOR.'LogInPanel.php';
+	}
+        else
+        {
+            echo '<br>linia: '.__LINE__.' You are logged';    
+            //session_destroy();
+            if(isset($_SESSION)){
+                echo '<br> >>>>>>>>>>>>>>>>>>>>> Session Active';
+            }else{
+                echo '<br> >>>>>>>>>>>>>>>>>>>>> Session destroyed!';
+            }
+            //header("Location: Index.php");
+        }
+/*
+echo '<br>linia: '.__LINE__.' =============================================<br>';
+//    require_once("common.inc.php");
+//    require_once VIEWS_PATH.DIRECTORY_SEPARATOR."head.php";
+//    echo PICTURES_PATH.DIRECTORY_SEPARATOR.'favicon_no_euro.ico';
+    
     $SQL1a = 'SELECT * FROM `osoba` WHERE `PESEL` = "75050106655";';
 
     echo '<br>linia: '.__LINE__.' '.'$SQL1a: '.$SQL1a.'<br>';
@@ -35,14 +62,24 @@ echo '<br>linia: '.__LINE__.' =============================================<br>'
 
 $Gosc = new Osoba(null, '1111111113', 'Jurij', 'Wiktor', 'Gagarin',"Kosmonautów 12", '42-212', "Warszawa")or die('NIe moge utworzyc takiej osoby');
 echo '<br>';
+
+echo '<br>linia: '.__LINE__.' =============================================<br>';
 $Gosc2 = new Osoba(1);
+$row = $Gosc;
+var_dump($row);
+
+echo '<br>linia: '.__LINE__.' =============================================<br>';
+$Gosc3 = new Osoba();
+$row = $Gosc3->GetOsobaById(3);
+
+var_dump($row);
 
 
 //$Gosc->setFullName('Barti', "Levi");
 
 //echo $Gosc->name.'<br>';
-
-
+/**/
+echo "<br>END header.php<br>=================================<br>";
+require_once VIEWS_PATH.DIRECTORY_SEPARATOR.'footer.php';
 ?>
-    </body>
-</html>
+

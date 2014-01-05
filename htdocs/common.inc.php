@@ -1,5 +1,4 @@
 <?php
-
 /**
  * common.inc.php
  *
@@ -9,7 +8,23 @@
  *
  */
 
-header('Content-Type: text/html; charset=utf-8'); 
+ob_start();
+session_start();
+if (isset($_SESSION['count'])){
+    echo '<br>linia: '.__LINE__.'$_SESSION[\'count\']: '.$_SESSION['count'].'<br>';
+    echo 'session set';
+        foreach ($_SESSION as $key => $value){
+                echo '<br>$_SESSION['.$key.'] => '. $value;
+        }
+}else{
+    echo 'session WAS NOT set, I\'ve set it';
+    //session_start();
+    $_SESSION['count'] = 1;
+    echo '<br>linia: '.__LINE__.' '.$_SESSION['count'].'<br>';
+}
+
+
+//header('Content-Type: text/html; charset=utf-8'); 
  // LOAD CUSTOM SETTINGS
 /*if (file_exists(dirname(__FILE__) . DIRECTORY_SEPARATOR . '../config.inc.php')) {
 	require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . '../config.inc.php');
@@ -18,83 +33,97 @@ header('Content-Type: text/html; charset=utf-8');
 //$tempPath = getenv('PATH');
 //$res = putenv('PATH=/opt/local/bin/:'.$tempPath);
 
+if(!empty($_SERVER['HTTP_REFERER'])) 
+		$ref = $_SERVER['HTTP_REFERER'];   	// PHP.NET: The address of the page (if any) which referred
 
 if (!defined('MAX_MAIL_BATCH')) {
 	define('MAX_MAIL_BATCH', 1); // Maximum number of emails to send while running the newsletter mailer job.
 }
 
-session_start();
+define(DIRECTORY_SEPARATOR, '/');
 
 // DEFINE DIRECTORIES
 define('BASE_PATH', dirname(__FILE__));
 define('ROOT', dirname(dirname(__FILE__))); 
+$temp = explode(DIRECTORY_SEPARATOR, ROOT);
+var_dump($temp);
+$len = count($temp)-1;
+echo($len);
+define('ROOT_PATH', $temp[$len]);
 define('UPRODUCE_UPLOAD_PATH', BASE_PATH . DIRECTORY_SEPARATOR . 'uProduceUploads');
 define('INCLUDE_PATH', substr(BASE_PATH, 0, strrpos(BASE_PATH, DIRECTORY_SEPARATOR)) . DIRECTORY_SEPARATOR . 'Includes');
 define('CLASSES_PATH', INCLUDE_PATH . DIRECTORY_SEPARATOR . 'Classes');
+
 define('LOCALE_PATH', INCLUDE_PATH . DIRECTORY_SEPARATOR . 'locale');
 define('FILES_PATH', substr(BASE_PATH, 0, strrpos(BASE_PATH, DIRECTORY_SEPARATOR)) . DIRECTORY_SEPARATOR . 'files');
-define('PICTURES_PATH', FILES_PATH . DIRECTORY_SEPARATOR . 'pictures');
+
 define('STYLES_PATH', BASE_PATH . DIRECTORY_SEPARATOR . 'Styles');
+define('VIEWS_PATH', BASE_PATH . DIRECTORY_SEPARATOR . 'Views');
+define('PICTURES_PATH', BASE_PATH . DIRECTORY_SEPARATOR . 'pictures');
+define('SCRIPT_PATH', BASE_PATH . DIRECTORY_SEPARATOR . 'scripts');
 define('INFO_IMG_FILE_PATH', BASE_PATH . DIRECTORY_SEPARATOR . 'infoImages');
 define('XML_RESOURCES_DIR', substr(BASE_PATH, 0, strrpos(BASE_PATH, DIRECTORY_SEPARATOR)) . DIRECTORY_SEPARATOR . 'xmlResources');
 define('PAGE_THUMBS_PATH', FILES_PATH . DIRECTORY_SEPARATOR . 'page_thumbs');
 
+echo 'linia: '.__LINE__.' DIRECTORY_SEPARATOR: '.DIRECTORY_SEPARATOR.'<br>';
 echo '<br><br>linia: '.__LINE__.' ROOT: '.ROOT.'<br>';
 echo 'linia: '.__LINE__.' BASE_PATH: '.BASE_PATH.'<br>';
+echo 'linia: '.__LINE__.' ROOT_PATH: '.ROOT_PATH.'<br>';
 echo 'linia: '.__LINE__.' UPRODUCE_UPLOAD_PATH: '.UPRODUCE_UPLOAD_PATH.'<br>';
 echo 'linia: '.__LINE__.' INCLUDE_PATH: '.INCLUDE_PATH.'<br>';
 echo 'linia: '.__LINE__.' CLASSES_PATH: '.CLASSES_PATH.'<br>';
 echo 'linia: '.__LINE__.' LOCALE_PATH: '.LOCALE_PATH.'<br>';
 echo 'linia: '.__LINE__.' FILES_PATH: '.FILES_PATH.'<br>';
 echo 'linia: '.__LINE__.' PICTURES_PATH: '.PICTURES_PATH.'<br>';
+echo 'linia: '.__LINE__.' SCRIPT_PATH: '.SCRIPT_PATH.'<br>';
 echo 'linia: '.__LINE__.' STYLES_PATH: '.STYLES_PATH.'<br>';
+echo 'linia: '.__LINE__.' VIEWS_PATH: '.VIEWS_PATH.'<br>';
 echo 'linia: '.__LINE__.' INFO_IMG_FILE_PATH: '.INFO_IMG_FILE_PATH.'<br>';
 echo 'linia: '.__LINE__.' XML_RESOURCES_DIR: '.XML_RESOURCES_DIR.'<br>';
 echo 'linia: '.__LINE__.' PAGE_THUMBS_PATH: '.PAGE_THUMBS_PATH.'<br>';
 echo 'linia: '.__LINE__.' =============================================<br>';
 
-// DEFAULT LANGUAGE
-//define("DEFAULT_LANGUAGE", "no");
+echo '<br>$_SERVER[\'HTTP_HOST\']: '.$_SERVER['HTTP_HOST'];
+echo '<br>$_SERVER[\'SCRIPT_NAME\']: '.$_SERVER['SCRIPT_NAME'];
+echo '<br>$_SERVER[\'REQUEST_URI\']: '.$_SERVER['REQUEST_URI'];
+echo '<br>$_SERVER[\'PHP_SELF\']: '.$_SERVER['PHP_SELF'];
+echo '<br>__FILE__: '.__FILE__;
+/**/
 
+mysql_query('SET NAMES utf8')or die ('error');
 
-// INCLUDE FILES - DO NOT TOUCH SEQUENCE
-//die("a");
-/*require_once(INCLUDE_PATH . DIRECTORY_SEPARATOR . 'classes.inc.php');
-require_once(INCLUDE_PATH . DIRECTORY_SEPARATOR . 'pear.inc.php');
-
-require_once(INCLUDE_PATH . DIRECTORY_SEPARATOR . 'db.inc.php');
-
-require_once(INCLUDE_PATH . DIRECTORY_SEPARATOR . 'localization.inc.php');
-
-if (!AUTO_LOGIN) { 
-	require_once(INCLUDE_PATH . DIRECTORY_SEPARATOR . 'auth.inc.php');
-}/**/
-mysql_query('SET NAMES utf8');
-
-mb_internal_encoding('UTF-8');
+mb_internal_encoding('UTF-8') or die ('error');
 
 /*** Ed stuff: ***/
 define('DATA_DIR', BASE_PATH);
 
-function db_query($sql)
-{
-	$ret = @mysql_query($sql);
-	
-	if (!$ret)
-		die('MySQL query failed: '.$sql.' Error message: '.mysql_error());//,$sql,mysql_error());
-	return $ret;
-}
+$BASE_FILE = $_SERVER['SCRIPT_NAME'];	// $PLIK ZAPAMIĘTUJE ŚCIEŻKĘ
 
+if (!isset($_SESSION['title'])){
+        $title = 'Transport Zespołowy GMBH';
+    }else{
+        $title = $_SESSION['title'];
+    }
+    
+    if (!isset($_SESSION['view_name'])){
+        $view_name = $BASE_FILE;
+    }else{
+        $view_name = $_SESSION['view_name'];
+    }
+$expire=time()+60;			// 60 sek! - Odświarzanie musi być ustawione na dłuższy czas niż długość życia cookie!!!!!
+//$expire=60*60*24*30;
+//$expire=time()+30;
+setcookie("user", "Barti Levi", $expire);
 
-//initPage();
-
-//require_once(INCLUDE_PATH . DIRECTORY_SEPARATOR . 'identifyImage.php');
-
-if (!defined('DO_NOT_CLOSE_SESSION')) {
-	session_write_close();
-}
-
+//if (!defined('DO_NOT_CLOSE_SESSION')) {
+//	session_write_close();
+//}
     include CLASSES_PATH.DIRECTORY_SEPARATOR.'Obiekt.class.php';
     include CLASSES_PATH.DIRECTORY_SEPARATOR.'Osoba.class.php';
     include CLASSES_PATH.DIRECTORY_SEPARATOR.'Person.class.php';
+    
+    require 'DB_Connection.php';
+    require 'buttons.php';
+    require_once 'PHP_Functions.php';
+    echo "<br>END common.inc.php<br>=================================<br>";
 ?>

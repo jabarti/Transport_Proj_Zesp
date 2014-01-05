@@ -1,0 +1,80 @@
+
+CREATE SCHEMA IF NOT EXISTS `apipo` DEFAULT CHARACTER SET utf8_polish_ci ;
+
+﻿ $this->PESEL=$PESEL; 
+ $this->Imie=$Imie; 				
+ $this->Imie2=$Imie2; 				
+ $this->Nazwisko=$Nazwisko; 		
+ $this->Adres_Ulica=$Adres_Ulica; 	
+ $this->Adres_Kod=$Adres_Kod; 		
+ $this->Adres_Miasto=$Adres_Miasto; 
+ $this->Adres_Kraj=$Adres_Kraj; 	
+ $this->telefon_kom=$telefon_kom; 	
+ $this->telefon_kom2=$telefon_kom2; 
+ $this->telefon_stacjonarny=$telefon_stacjonarny; 	
+ $this->FAX=$FAX; 		
+ $this->email=$email; 			
+ $this->Plec=$Plec; 				
+ $this->Data_urodzenia=$Data_urodzenia; 
+
+        $this->_Adres_Ulica=$Adres_Ulica; 	
+        $this->_Adres_Kod=$Adres_Kod; 		
+        $this->_Adres_Miasto=$Adres_Miasto; 
+        $this->_Adres_Kraj=$Adres_Kraj; 	
+        $this->_telefon_kom=$telefon_kom; 	
+        $this->_telefon_kom2=$telefon_kom2; 
+        $this->_telefon_stacjonarny=$telefon_stacjonarny; 	
+        $this->_FAX=$FAX; 		
+        $this->_email=$email; 			
+        $this->_Plec=$Plec; 				
+        $this->_Data_urodzenia=$Data_urodzenia; 
+		
+		
+		                                        $this->_ID_Osoba, 
+                                        $this->_PESEL,
+                                        $this->_Imie,				
+                                        $this->_Imie2,			
+                                        $this->_Nazwisko,		
+                                        $this->_Adres_Ulica,	
+                                        $this->_Adres_Kod,		
+                                        $this->_Adres_Miasto,
+                                        $this->_Adres_Kraj=$Adres_Kraj; 	
+                                        $this->_telefon_kom=$telefon_kom; 	
+                                        $this->_telefon_kom2=$telefon_kom2; 
+                                        $this->_telefon_stacjonarny=$telefon_stacjonarny; 	
+                                        $this->_FAX=$FAX; 		
+                                        $this->_email=$email; 			
+                                        $this->_Plec=$Plec; 				
+                                        $this->_Data_urodzenia=$Data_urodzenia;
+										
+`PESEL`= 				"'.$this->_PESEL.'", 
+`Imie`=                 "'.$this->_Imie.'",  				
+`Imie2`=                "'.$this->_Imie2.'", 				
+`Nazwisko`=             "'.$this->_Nazwisko.'", 		
+`Adres_Ulica`=          "'.$this->_Adres_Ulica.'", 	
+`Adres_Kod`=            "'.$this->_Adres_Kod.'", 		
+`Adres_Miasto`=         "'.$this->_Adres_Miasto.'", 
+`Adres_Kraj`=           "'.$this->_Adres_Kraj.'", 	
+`telefon_kom`=          "'.$this->_telefon_kom.'", 	
+`telefon_kom2`=         "'.$this->_telefon_kom2.'",  
+`telefon stacjonarny`=  "'.$this->_telefon_stacjonarny.'", 	
+`FAX`=                  "'.$this->_FAX.'", 		
+`email`=                "'.$this->_email.'", 			
+`Plec`=                 "'.$this->_Plec.'", 				
+`Data_urodzenia`        "'.$this->_Data_urodzenia.'"
+
+"'.$this->_PESEL.'", 
+"'.$this->_Imie.'",  				
+"'.$this->_Imie2.'", 				
+"'.$this->_Nazwisko.'", 		
+"'.$this->_Adres_Ulica.'", 	
+"'.$this->_Adres_Kod.'", 		
+"'.$this->_Adres_Miasto.'", 
+"'.$this->_Adres_Kraj.'", 	
+"'.$this->_telefon_kom.'", 	
+"'.$this->_telefon_kom2.'",  
+"'.$this->_telefon_stacjonarny.'", 	
+"'.$this->_FAX.'", 		
+"'.$this->_email.'", 			
+"'.$this->_Plec.'", 				
+"'.$this->_Data_urodzenia.'"
