@@ -1,7 +1,7 @@
 ﻿<?php
-$dbhost = "localhost";
-$dbuser	= "user";
-$dbpass	= "haslo";
+$dbhost = "";
+$dbuser	= "";
+$dbpass	= "";
 $dbname	= "APiPO";
 
 if (PHP_VERSION_ID<50500)
