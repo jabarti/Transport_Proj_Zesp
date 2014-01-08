@@ -1,35 +1,39 @@
 <?php
 require_once "common.inc.php";
 require_once VIEWS_PATH.DIRECTORY_SEPARATOR.'header.php';
-echo "<br>START index.php<br>=================================<br>";
+//echo "<br>START index.php<br>=================================<br>";
 if (isset($_SESSION['count'])){
     $_SESSION['count']++;
-    echo '<br>linia: '.__LINE__.'$_SESSION[\'count\']: '.$_SESSION['count'].'<br>';
+//    echo '<br>linia: '.__LINE__.'$_SESSION[\'count\']: '.$_SESSION['count'].'<br>';
 
 }
 
 if (isset($_POST['uzytkownik'])){
-    echo '<br>linia: '.__LINE__.' '.$_POST['uzytkownik'];
+//    echo '<br>linia: '.__LINE__.' '.$_POST['uzytkownik'];
 }
 if (isset($_SESSION['uzytk'])){
-    echo '<br>linia: '.__LINE__.' '.$_SESSION['uzytk'];
+//    echo '<br>linia: '.__LINE__.' '.$_SESSION['uzytk'];
 }
 
-switch ($view_name){
-    case 'login':
-        echo '<br>linia: '.__LINE__.' '.$view_name;
-        break;
-    default:
-        echo '<br>linia: '.__LINE__.' '.$view_name;
-        break; 
-}
+//switch ($view_name){
+//    case 'login':
+//        echo '<br>linia: '.__LINE__.' '.$view_name;
+//        break;
+//    default:
+//        echo '<br>linia: '.__LINE__.' '.$view_name;
+//        break; 
+//}
 
 //echo 'Logged: '.Logged();
 
 if(!Logged())
 	{
+            echo '<div id="glowny_index">';
             echo '<br>linia: '.__LINE__.' You are NOT logged';
-            include VIEWS_PATH.DIRECTORY_SEPARATOR.'LogInPanel.php';
+//            unset($_COOKIE['user']);
+            include LoadView('login');
+//            include VIEWS_PATH.DIRECTORY_SEPARATOR.'LogInPanel.php';
+            echo '</div>';
 	}
         else
         {

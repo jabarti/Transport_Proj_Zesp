@@ -1,9 +1,14 @@
 <?php
+/* 
+ * @author Bartosz Lewiński <jabarti@wp.pl>
+ *
+ */
 
-require_once "common.inc.php";
-//require VIEWS_PATH.DIRECTORY_SEPARATOR.'header.php';
+require_once "../common.inc.php";
 
-//require_once("common.inc.php");
+$_SESSION['title'] = 'Main | Główna';
+//echo '<br>$_SESSION[\'title\']: '.$_SESSION['title'];
+
 	//echo "Polaczony z baza(forma.inc.php): ".$bd."<br>";
 	//_CheckConnection($DBConn);
 	
@@ -37,6 +42,10 @@ require_once "common.inc.php";
 					{	
 						echo '<br>linia: '.__LINE__.' '.'Krok4: NO!!<br>';
 						echo '<br>linia: '.__LINE__.' '."Zła nazwa użytkownika lub hasło!";
+                                                echo '$_COOKIE[\'user\']: '.$_COOKIE['user'];
+                                                unset($_COOKIE['user']);
+                                                session_destroy();
+                                                echo '$_COOKIE[\'user\']: '.$_COOKIE['user'];
                                                 header('Location: '.$ref);   	// - wróci do strony z której było logowanie.
 					}
 					else if($mnr_Log_001 == 1)
@@ -57,8 +66,8 @@ require_once "common.inc.php";
 							echo '<br>linia: '.__LINE__.$SQL_Log_003."<br>";
 							$mq_Log_003 = mysql_query($SQL_Log_003, $DBConn) or die('<br>linia: '.__LINE__.' Wykonanie zapytania nie powiodło się : ' . mysql_error());
 							$mr_Log_003 = mysql_result($mq_Log_003, 0, 0);
-							$_SESSION['imie'] = $mr_Log_003;
-							echo $_SESSION['imie']."<br>";
+							$_SESSION['user'] = $mr_Log_003;
+							echo $_SESSION['user']."<br>";
 							//================= to bedzie klucz sesji!!
 							$uzytk = mysql_result($mq_Log_001, 0, 0);
 							$_SESSION['uzytk'] = $uzytk;
@@ -67,6 +76,7 @@ require_once "common.inc.php";
 							echo '<br>linia: '.__LINE__."\$uzytk: ".$uzytk;
 							echo '<br>linia: '.__LINE__."\$_SESSION\[\'uzytk\'\]: ".$_SESSION['uzytk'];
                                                         echo '<br>linia: '.__LINE__.$ref;
+                                                        
 							header('Location: '.$ref);   	// - wróci do strony z której było logowanie.
 															// header('Location: index.php'); - wr�ci tylko do index.php
 															// $ref - W��CZONE!!!!!!!!!!!!! w core_v2.0.inc.php!!!!!!!!!!
