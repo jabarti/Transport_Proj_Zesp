@@ -1,6 +1,6 @@
 <?php
 require_once "common.inc.php";
-require_once VIEWS_PATH.DIRECTORY_SEPARATOR.'header.php';
+require_once HDD_VIEWS_PATH.'header.php';
 //echo "<br>START index.php<br>=================================<br>";
 if (isset($_SESSION['count'])){
     $_SESSION['count']++;
@@ -83,7 +83,7 @@ var_dump($row);
 
 //echo $Gosc->name.'<br>';
 /**/
-echo "<br>END header.php<br>=================================<br>";
-require_once VIEWS_PATH.DIRECTORY_SEPARATOR.'footer.php';
+//echo "<br>END header.php<br>=================================<br>";
+require_once HDD_VIEWS_PATH.'footer.php';
 ?>
 

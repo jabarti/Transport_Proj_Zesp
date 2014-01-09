@@ -1,6 +1,9 @@
 *~
 *.exe
 *.[oa]
+*.eap
+*.mwb
+*.mwb.bak
 nbproject
 htdocs/DB_Connection.php
 ExternalResources/Oracle_modeler

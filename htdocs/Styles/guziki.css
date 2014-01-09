@@ -1,9 +1,9 @@
-﻿body
+/*﻿body
 {
-background-color:#d0e4fe;/**/
+background-color:#d0e4fe;
 width: 84%;
 allign: center;
-   /*background: url(../pictures/134.jpg) no-repeat center center fixed; /**/
+   background: url(/files/img/logo.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -13,7 +13,7 @@ allign: center;
 div.cleaner {
 clear: both;
 
-}
+}*/
 
 p.red {
 color:red;

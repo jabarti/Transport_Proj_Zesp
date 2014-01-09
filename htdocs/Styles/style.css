@@ -2,6 +2,7 @@
 
 body {
 	background: #2CFFD0; 
+        background: url(/files/img/logo.jpg) no-repeat center center fixed;
 	/*background: #EFDF95; */
 	/*bacground: white;*/
 	width: 900px; 
