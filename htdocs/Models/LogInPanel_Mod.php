@@ -7,6 +7,7 @@
 require_once "../common.inc.php";
 
 $_SESSION['title'] = 'Main | Główna';
+
 //echo '<br>$_SESSION[\'title\']: '.$_SESSION['title'];
 
 	//echo "Polaczony z baza(forma.inc.php): ".$bd."<br>";
@@ -46,6 +47,7 @@ $_SESSION['title'] = 'Main | Główna';
                                                 unset($_COOKIE['user']);
                                                 session_destroy();
                                                 echo '$_COOKIE[\'user\']: '.$_COOKIE['user'];
+                                                unset($_GET['Main_view_name']);
                                                 header('Location: '.$ref);   	// - wróci do strony z której było logowanie.
 					}
 					else if($mnr_Log_001 == 1)
@@ -77,7 +79,8 @@ $_SESSION['title'] = 'Main | Główna';
 							echo '<br>linia: '.__LINE__."\$_SESSION\[\'uzytk\'\]: ".$_SESSION['uzytk'];
                                                         echo '<br>linia: '.__LINE__.$ref;
                                                         
-							header('Location: '.$ref);   	// - wróci do strony z której było logowanie.
+                                                        unset($_GET['Main_view_name']);
+							header('Location: '.$ref.'?Main_view_name=main');   	// - wróci do strony z której było logowanie.
 															// header('Location: index.php'); - wr�ci tylko do index.php
 															// $ref - W��CZONE!!!!!!!!!!!!! w core_v2.0.inc.php!!!!!!!!!!
 						}

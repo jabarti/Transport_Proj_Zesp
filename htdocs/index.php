@@ -1,11 +1,9 @@
 <?php
 require_once "common.inc.php";
 require_once HDD_VIEWS_PATH.'header.php';
-//echo "<br>START index.php<br>=================================<br>";
+
 if (isset($_SESSION['count'])){
     $_SESSION['count']++;
-//    echo '<br>linia: '.__LINE__.'$_SESSION[\'count\']: '.$_SESSION['count'].'<br>';
-
 }
 
 if (isset($_POST['uzytkownik'])){
@@ -15,37 +13,11 @@ if (isset($_SESSION['uzytk'])){
 //    echo '<br>linia: '.__LINE__.' '.$_SESSION['uzytk'];
 }
 
-//switch ($view_name){
-//    case 'login':
-//        echo '<br>linia: '.__LINE__.' '.$view_name;
-//        break;
-//    default:
-//        echo '<br>linia: '.__LINE__.' '.$view_name;
-//        break; 
-//}
+echo '<div id="glowny_index">';
+include LoadMainView($Main_view_name);
+echo '</div>';
 
-//echo 'Logged: '.Logged();
 
-if(!Logged())
-	{
-            echo '<div id="glowny_index">';
-            echo '<br>linia: '.__LINE__.' You are NOT logged';
-//            unset($_COOKIE['user']);
-            include LoadView('login');
-//            include VIEWS_PATH.DIRECTORY_SEPARATOR.'LogInPanel.php';
-            echo '</div>';
-	}
-        else
-        {
-            echo '<br>linia: '.__LINE__.' You are logged';    
-            //session_destroy();
-            if(isset($_SESSION)){
-                echo '<br> >>>>>>>>>>>>>>>>>>>>> Session Active';
-            }else{
-                echo '<br> >>>>>>>>>>>>>>>>>>>>> Session destroyed!';
-            }
-            //header("Location: Index.php");
-        }
 /*
 echo '<br>linia: '.__LINE__.' =============================================<br>';
 //    require_once("common.inc.php");

@@ -5,16 +5,14 @@ require_once "common.inc.php";
 
 <h4 style="text-align: center">Proszę się zalogować<br>Dalsza praca tylko dla zalogowanych użytkowników</h4>
 <?php 
-echo '<br>linia: '.__LINE__.' '.$BASE_FILE;
+//echo '<br>linia: '.__LINE__.' '.$BASE_FILE;
 
 $_SESSION['title'] = 'Logowanie';
 
-echo '<br>'.$_SESSION['count'].'<br>';
+//echo '<br>'.$_SESSION['count'].'<br>';
 ?>
-<!--<form action='<?php echo MODELS_PATH.DIRECTORY_SEPARATOR."LogInPanel_Mod.php"; ?>' method="POST">       <!-- // SIMPLE 1 -->
-<form action='../htdocs/Models/LogInPanel_Mod.php' method="POST">       <!-- // SIMPLE 1 -->
-<!--<form action=<?php echo $BASE_FILE; ?> method="POST">       <!--        // SIMPLE 1 -->
-
+<!--<form action='<?php echo HTTP_HTDOCS."Models/LogInPanel_Mod.php"; ?>' method="POST">-->       
+<form action='<?php echo HTTP_MODELS_PATH."LogInPanel_Mod.php"; ?>' method="POST">       
 	<table>
 		<tr>
 			<td>Użytkownik/Login:</td>

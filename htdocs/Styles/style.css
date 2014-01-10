@@ -1,10 +1,10 @@
 /*@charset "utf-8";*/
 
 body {
-	background: #2CFFD0; 
-        background: url(/files/img/logo.jpg) no-repeat center center fixed;
+        background: url(backgrounds/logo.png) no-repeat top center fixed; 
+
 	/*background: #EFDF95; */
-	/*bacground: white;*/
+	/*background: white;*/
 	width: 900px; 
 	height: 500px;
 	margin-left:auto;
@@ -32,7 +32,10 @@ a:active {color:#0000FF;}  /* selected link */
 #red { color: red; }
 
 div#glowny {
-	background: grey/*blue/*black*/;
+        position: relative;
+        /*top:150px;*/
+	background: lightgrey/*blue/*black*/;
+        opacity: 0.5;
 	width: 880px; 
 	height: auto;
 	margin-left: auto;
@@ -43,26 +46,47 @@ div#glowny {
 	}
 	
 div#glowny_wew {
-	background: grey/*blue/*black*/;
-	width: 880px; 
-	height: auto;
+	background: lightcyan;
+	width: 50%; 
+	height: 500px;
 	margin-left: auto;
 	margin-right: auto;
+	-moz-box-shadow: 0px 0px 6px #88a;
+	-webkit-box-shadow: 0px 0px 6px #88a;
+	box-shadow: 0px 0px 6px #88a; 
 	padding: 0px;
-	float: right;
+	float: left;
+        display: block;
 	/*color: white;*/
 	}
 	
-	div#glowny_index {
+div#glowny_index {
 	background: grey/*blue/*black*/;
+        top:450px;
 	width: 880px; 
 	height: auto;
 	padding: 10px;
 	float:right;
 	/*color: white;*/
 	}
+        
+div#LogInfo{
+         position: fixed;
+         bottom:10px;
+         right: 5px;
+         width: 200px;
+         background: greenyellow;
+         font-size: 10px;
+         opacity: 0.3;
+         border: 1px solid #00cccc;
+         -moz-box-shadow: 0px 0px 6px #88a;
+	 -webkit-box-shadow: 0px 0px 6px #88a;
+	 box-shadow: 0px 0px 6px #88a; 
+        }
+        
 #footer {
-	background: blue;
+	background: blueviolet;
+        /*background: url(backgrounds/menu.png) no-repeat center center fixed;*/
 	margin-left: auto;
 	margin-right: auto;
 	width: auto;
