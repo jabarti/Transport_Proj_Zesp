@@ -63,6 +63,7 @@ if (isset($_SESSION['user'])){
     IncludeClassFile('Obiekt.class.php');
     IncludeClassFile('Person.class.php');
     IncludeClassFile('Osoba.class.php');
+    IncludeClassFile('Formularz.class.php');
     
 if (!isset($_COOKIE['user'])){          // SKOŃCZYŁ SIE CZAS SESJI USERA
     unsetter();                         // really works?

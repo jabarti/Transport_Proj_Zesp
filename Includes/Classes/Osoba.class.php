@@ -75,6 +75,9 @@ class Osoba { //extends Obiekt{
 //           $this->fields = array('ID_Osoba', 'PESEL', 'Imie', 'Imie2', 'Nazwisko', 'Adres_Ulica','Adres_Kod','Adres_Miasto', 
 //                                 'Adres_Kraj', 'telefon_kom', 'telefon_kom2', 'telefon_stacjonarny','FAX', 'email', 
 //                                 'Plec', 'Data_urodzenia');
+   public $OsForm = array('ID_Osoba', 'PESEL', 'Imie', 'Imie2', 'Nazwisko', 'Adres_Ulica','Adres_Kod','Adres_Miasto', 
+      'Adres_Kraj', 'telefon_kom', 'telefon_kom2', 'telefon_stacjonarny','FAX', 'email', 
+      'Plec', 'Data_urodzenia');
     
    public function __construct($ID_Osoba=NULL, $PESEL=NULL, $Imie=NULL, $Imie2=NULL, $Nazwisko=NULL, $Adres_Ulica=NULL,$Adres_Kod=NULL,$Adres_Miasto=NULL, 
                                  $Adres_Kraj=NULL, $telefon_kom=NULL, $telefon_kom2=NULL, $telefon_stacjonarny=NULL,$FAX=NULL, $email=NULL, 
