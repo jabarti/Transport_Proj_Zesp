@@ -25,6 +25,6 @@ echo '<br>=====<br>var_dump($arrContForm):';
 var_dump($arrContForm);             // use it to work here!!!!!
 echo '<br>=====<br>session?($arrContForm):';
 $_SESSION['arrContForm'] = $arrContForm;
-var_dump($_SESSION['arrContForm']);  // use it to work and send ir somewhere!!!!!
-//header("Location: ".HTTP_HTDOCS.'Index.php');
+//var_dump($_SESSION['arrContForm']);  // use it to work and send ir somewhere!!!!!
+header("Location: ".HTTP_HTDOCS.'Index.php');
 ?>

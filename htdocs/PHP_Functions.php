@@ -100,4 +100,16 @@ function IncludeClassFile($file){
         }
     }
 }
+//                <td><input type="text" id="'.$key.'" name="'.$key.'" value="'.(isset($_SESSION['.$key.'])) ? $_SESSION['.$key.']: '.$text.'.'"></input> </td>
+function CreateInForm($array){
+    foreach ($array as $key => $value){
+        echo'<tr>
+                <td>'.$key.': <span id="red">*</span></td>
+                <td><input type="text" id="'.$key.'" name="'.$key.'" value="'.$value.'"></input> </td>
+             </tr>
+            <tr>
+                <td colspan="2"><div id="error'.$key.'" class="error"></div></td>
+            </tr>';
+    }
+}
 ?>

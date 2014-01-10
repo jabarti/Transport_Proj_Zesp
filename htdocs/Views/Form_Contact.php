@@ -1,12 +1,11 @@
 <?php
-
-/**
+/***********************************************
  * Filename: Form_Contact.php
  * 
- * Created: 2014-01-09
+ * Created:  2014-01-09
  *
- * @author Bartosz M. Lewiński <jabarti@wp.pl>
- */
+ * @author   Bartosz M. Lewiński <jabarti@wp.pl>
+ ***********************************************/
 /*
     protected $_ID_Osoba;   
     protected $_PESEL;
@@ -34,26 +33,15 @@
 <form id="Contact" action="<?php echo HTTP_MODELS_PATH.'Form_Contact_Mod.php' ?>" method="POST">
     <table>
         <th colspan="2"> Formularz zgłoszeniowy </th>
-        <tr>
-            <td>Imie</td>
-            <td><input type="text" name="imie" value="<?php echo (isset($_SESSION['imie'])) ? $_SESSION['imie']: ''; ?>"></input> </td>
-        </tr>
-        <tr>
-            <td>Nazwisko</td>
-            <td><input type="text" name="nazwisko" value="<?php echo (isset($_SESSION['nazwisko'])) ? $_SESSION['nazwisko']: ''; ?>"></input></td>
-        <tr>
-         <tr>
-            <td>email</td>
-            <td><input type="text" name="email" value="<?php echo (isset($_SESSION['email'])) ? $_SESSION['email']: ''; ?>"></input></td>
-        <tr>
-        <tr>
-            <td>phone</td>
-            <td><input type="text" name="phone" value="<?php echo (isset($_SESSION['phone'])) ? $_SESSION['phone']: ''; ?>"></input></td>
-        <tr>
+<?php
+
+$array = array('imie' => '','nazwisko'=> '', 'email' => '', 'phone' => '');
+CreateInForm($array);
+
+?>        
         <tr>
             <td>Zgłoszenie</td>
-            <td><textarea name="zgloszenie" cols="25" rows="5"><?php echo (isset($_SESSION['zgloszenie'])) ? $_SESSION['zgloszenie']: 'Enter your request here...'; ?></textarea></td>
-<!--            <td><input type="textbox" name="zgloszenie" value="<?php echo (isset($_SESSION['zgloszenie'])) ? $_SESSION['zgloszenie']: 'Enter your request here...'; ?>"></input></td>-->
+            <td><textarea id="zgloszenie" name="zgloszenie" cols="25" rows="5"><?php echo (isset($_SESSION['zgloszenie'])) ? $_SESSION['zgloszenie']: 'Enter your request here...'; ?></textarea></td>
         <tr>
             <td></td>
             <td style="text-align: right;"><input type="submit" name="ContactForm" value="Wyślij"></td>

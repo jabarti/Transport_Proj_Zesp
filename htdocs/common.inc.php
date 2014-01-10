@@ -1,20 +1,20 @@
 <?php
-/**
+/*****************************************************
  * common.inc.php
  *
  * Includes all necessary files for the project.
  *
  * @author Bartosz Lewiński <jabarti@wp.pl>
  *
- */
+ *****************************************************/
 
 ob_start();
 session_start();
 
 //echo session_id();
 
-echo '<div id="LogInfo" style="left: 5px; opacity:1">';
-if (isset($_SESSION['count'])){
+echo '<div id="LogInfo" style="left: 5px; opacity:0,5;">';
+if (isset($_SESSION)){
 //    echo '<br>linia: '.__LINE__.' $_SESSION[\'count\']: '.$_SESSION['count'].'<br>';
 //    echo 'session set';
         foreach ($_SESSION as $key => $value){
@@ -22,12 +22,13 @@ if (isset($_SESSION['count'])){
         }
 echo '</div>';
 //        echo '<br>';
-}else{
+}
+//else{
 //    echo '<br>session WAS NOT set, I\'ve set it<br>';
     //session_start();
     $_SESSION['count'] = 1;
 //    echo '<br>linia: '.__LINE__.' '.$_SESSION['count'].'<br>';
-}
+//}
 
 if(!empty($_SERVER['HTTP_REFERER'])) 
 		$ref = $_SERVER['HTTP_REFERER'];   	// PHP.NET: The address of the page (if any) which referred
