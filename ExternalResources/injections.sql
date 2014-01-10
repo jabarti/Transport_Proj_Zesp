@@ -5,6 +5,8 @@ VALUES
 (NULL, '75050106655', 'Bartek', 'Michał', 'Lewiński', 'OW 11/90', '42-200', 'Czestochowa', 
 'Polska', '600000000', NULL, NULL, NULL, NULL, 'M', NULL);
 
+UPDATE `apipo`.`osoba` SET `email` = 'jabarti@wp.pl' WHERE `osoba`.`ID_Osoba` = 2;
+
 
 INSERT INTO `apipo`.`osoba` 
 (`ID_Osoba`, `PESEL`, `Imie`, `Imie2`, `Nazwisko`, `Adres_Ulica`, `Adres_Kod`, `Adres_Miasto`, `Adres_Kraj`,

@@ -35,10 +35,14 @@
         <th colspan="2"> Formularz zgłoszeniowy </th>
 <?php
 
-$array = array('imie' => '','nazwisko'=> '', 'email' => '', 'phone' => '');
-CreateInForm($array);
+//$arrFormCont = array('imie' => '','nazwisko'=> '', 'email' => '', 'phone' => '');
+CreateInForm($arrFormCont);
 
 ?>        
+<!--        <tr>
+            <td></td>
+            <td><input type="hidden" id="hidder" name="hidder" ><?php echo (isset($_SESSION['user'])) ? $_SESSION['user']: ''; ?></input></td>
+        <tr>-->
         <tr>
             <td>Zgłoszenie</td>
             <td><textarea id="zgloszenie" name="zgloszenie" cols="25" rows="5"><?php echo (isset($_SESSION['zgloszenie'])) ? $_SESSION['zgloszenie']: 'Enter your request here...'; ?></textarea></td>

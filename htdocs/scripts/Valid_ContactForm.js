@@ -16,7 +16,7 @@ function (){
             czyWypelnione(this.email)    &&
             isValidEmail(this.email) &&
             czyWypelnione(this.phone) &&
-            isMinLength (this.phone, 9) &&
+            isMinLength (this.phone, 9)
 
 //            czyWypelnione(this.imie)
 //            czyWypelnione(this.NIP)	&&

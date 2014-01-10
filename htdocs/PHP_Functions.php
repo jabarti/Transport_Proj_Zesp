@@ -1,11 +1,11 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-//echo '<br>linia: '.__LINE__.' I\'m in PHP Function.php';
-//echo ($_COOKIE['user'])?($_COOKIE['user']):'NOT ESTABLISHED';
+/* * *********************************************
+ * Filename:    PHP_Functions.php
+ * 
+ * Created:     2014-01-11
+ *
+ * @author      Bartosz M. Lewiński <jabarti@wp.pl>
+ * ********************************************* */
 
 function Logged(){
 //	if(isset($_SESSION['uzytk']) AND !empty($_SESSION['uzytk']) AND isset($_SESSION['user'])){   // Mówi o zmiennych dostępnych w obecnej sesji
@@ -103,6 +103,10 @@ function IncludeClassFile($file){
 //                <td><input type="text" id="'.$key.'" name="'.$key.'" value="'.(isset($_SESSION['.$key.'])) ? $_SESSION['.$key.']: '.$text.'.'"></input> </td>
 function CreateInForm($array){
     foreach ($array as $key => $value){
+        
+        if (isset($_SESSION[$key])){
+            $value = $_SESSION[$key];
+        }
         echo'<tr>
                 <td>'.$key.': <span id="red">*</span></td>
                 <td><input type="text" id="'.$key.'" name="'.$key.'" value="'.$value.'"></input> </td>
@@ -110,6 +114,24 @@ function CreateInForm($array){
             <tr>
                 <td colspan="2"><div id="error'.$key.'" class="error"></div></td>
             </tr>';
+    }
+}
+
+function CreateForm($array){
+    foreach ($array as $key => $row){
+        foreach ($row as $key2 => $val){
+        
+            if (isset($_SESSION[$key2])){
+                $val = $_SESSION[$key2];
+            }
+            echo'<tr>
+                    <td>'.$key.': <span id="red">*</span></td>
+                    <td><input type="'.$key.'" id="'.$key2.'" name="'.$key2.'" value="'.$val.'"></input> </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><div id="error'.$key2.'" class="error"></div></td>
+                </tr>';
+        }
     }
 }
 ?>

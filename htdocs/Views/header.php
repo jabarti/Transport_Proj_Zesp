@@ -12,9 +12,10 @@
          <script type="text/javascript" src="<?php echo HTTP_SCRIPTS_PATH.'Valid_ContactForm.js';?>"></script><!---->
  
         <meta http-equiv="Content-Language" content="PL" />
-	<meta http-equiv="refresh" content="65"/>  <!-- Od�wie�anie co 5 minut i 30sek = 330 -->
         
-	<link rel="Stylesheet" type="text/css" href="<?php echo HTTP_STYLES_PATH.'reset.php'?>" />
+	<meta http-equiv="refresh" content="330"/>  <!-- Od�wie�anie co 5 minut i 30sek = 330 -->
+        
+	<!--<link rel="Stylesheet" type="text/css" href="<?php echo HTTP_STYLES_PATH.'reset.css'?>" />-->
 	<link rel="Stylesheet" type="text/css" href="<?php echo HTTP_STYLES_PATH.'style.css'?>" />
 	<link rel="Stylesheet" type="text/css" href="<?php echo HTTP_STYLES_PATH.'guziki.css'?>" />
         

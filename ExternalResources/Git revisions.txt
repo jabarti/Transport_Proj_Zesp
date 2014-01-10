@@ -1,0 +1,7 @@
+﻿20140110g2234
+[master 3eecf73] Basic Form Function
+ 9 files changed, 311 insertions(+), 41 deletions(-)
+ create mode 100644 htdocs/scripts/FunctionsJS.js
+ delete mode 100644 htdocs/scripts/JS Functions.js
+ create mode 100644 htdocs/scripts/Valid_ContactForm.js
+

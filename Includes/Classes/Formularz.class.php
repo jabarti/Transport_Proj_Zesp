@@ -7,6 +7,8 @@
  */
 class Formularz {
     //put your code here
+    public $id;
+    
 }
 
 ?>

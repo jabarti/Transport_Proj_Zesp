@@ -45,7 +45,7 @@ mb_internal_encoding('UTF-8') or die ('error');
     
 if (isset($_SESSION['user'])){
 //    echo "<br>Jest Session USER";
-    $expire=time()+60*1;			// 2min! - Odświarzanie musi być ustawione na dłuższy czas niż długość życia cookie!!!!!
+    $expire=time()+60*4.5;			// 2min! - Odświarzanie musi być ustawione na dłuższy czas niż długość życia cookie!!!!!
     setcookie("user", $_SESSION['user'], $expire);
     
     if (isset($_COOKIE['user'])){
