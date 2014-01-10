@@ -31,10 +31,10 @@ function db_query($sql)
 }
 
 function unsetter(){
-    foreach ($_SESSION as $key){
-//        echo '<br>$_SESSION['.$key.'] - destroyed';
-            unset($_SESSION[$key]) ;//or die("error");
-    }
+//    foreach ($_SESSION as $key){
+////        echo '<br>$_SESSION['.$key.'] - destroyed';
+//            unset($_SESSION[$key]) ;//or die("error");
+//    }
 //        foreach ($_COOKIE as $key){
 //        echo '<br>$_COOKIE['.$key.'] - destroyed';
 //            unset($_COOKIE[$key]) ;//or die("error");
