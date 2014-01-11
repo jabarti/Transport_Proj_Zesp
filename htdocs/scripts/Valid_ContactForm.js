@@ -30,7 +30,7 @@ function (){
             }
             else
             {
-                alert ('error = false - złe wertości textbox');
+//                alert ('error = false - złe wertości textbox');
                 return false;
             }
     }

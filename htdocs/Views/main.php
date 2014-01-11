@@ -16,15 +16,15 @@ if(Logged()){
 //                 $arrFormCont = array('imie' => '','nazwisko'=> '', 'email' => '', 'phone' => '');
         break;
         case 'klient':
-                 $view_name = array('CompInfo', 'OtherInfo', 'Form_Contact');
-                 $arrFormCont = array('imie' => '','nazwisko'=> '', 'email' => '', 'phone' => '');
+                 $view_name = array('CompInfo', 'OtherInfo', 'Form_Contact', 'Prices');
+                 $arrFormCont = array('imie' => '','nazwisko'=> '', 'email' => '', 'phone' => '', 'klient_ID_Klient' => $_SESSION['uzytk']);
         break;
     }
 //     $view_name = array('CompInfo', 'OtherInfo', 'Form_Contact');
 //     $arrFormCont = array('imie' => '','nazwisko'=> '', 'email' => '', 'phone' => '');
 }else{
 //     echo '<br>linia: '.__LINE__.' You are logged';    
-     $view_name = array('Form_Contact', 'CompInfo', 'OtherInfo');
+     $view_name = array('Form_Contact', 'CompInfo', 'OtherInfo', 'Prices');
      $arrFormCont = array('imie' => '','nazwisko'=> '', 'email' => '', 'phone' => '');
 }   
             

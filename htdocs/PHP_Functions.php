@@ -142,7 +142,7 @@ function InsertInto($table, $formSubmitName){
         $SQL .= 'INSERT INTO `'.$table.'` (';
             
         foreach ($_POST as $key => $value){
-//            echo '<br>$POST["'.$key.'"] = '.$value;
+            echo '<br>$POST["'.$key.'"] = '.$value;
             if ($key != $formSubmitName)
                 $arr[$key] = $key;
         }
@@ -164,5 +164,9 @@ function InsertInto($table, $formSubmitName){
             return false;
         }
     }
+}
+
+function CreateTable ($array){
+    
 }
 ?>
