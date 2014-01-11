@@ -1,6 +1,6 @@
 <?php
 require_once "common.inc.php";
-require_once HDD_VIEWS_PATH.'header.php';
+require_once HDD_STABLEVIEWS_PATH.'header.php';
 
 if (isset($_SESSION['count'])){
     $_SESSION['count']++;
@@ -56,6 +56,6 @@ var_dump($row);
 //echo $Gosc->name.'<br>';
 /**/
 //echo "<br>END header.php<br>=================================<br>";
-require_once HDD_VIEWS_PATH.'footer.php';
+require_once HDD_STABLEVIEWS_PATH.'footer.php';
 ?>
 

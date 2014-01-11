@@ -46,6 +46,7 @@ if (!defined('HTTP_MODELS_PATH'))    define('HTTP_MODELS_PATH', HTTP_HTDOCS.'Mod
 if (!defined('HTTP_STYLES_PATH'))    define('HTTP_STYLES_PATH', HTTP_HTDOCS.'Styles'.DIR_SEP);
 if (!defined('HTTP_BACKGROUND_PATH'))    define('HTTP_BACKGROUND_PATH', HTTP_STYLES_PATH.'background'.DIR_SEP);
 if (!defined('HTTP_VIEWS_PATH'))    define('HTTP_VIEWS_PATH', HTTP_HTDOCS.'Views'.DIR_SEP);
+if (!defined('HTTP_STABLEVIEWS_PATH'))    define('HTTP_STABLEVIEWS_PATH', HTTP_VIEWS_PATH.'StableViews'.DIR_SEP);
 if (!defined('HTTP_PICTURES_PATH'))    define('HTTP_PICTURES_PATH', HTTP_HTDOCS.'Pictures'.DIR_SEP);
 if (!defined('HTTP_SCRIPTS_PATH'))    define('HTTP_SCRIPTS_PATH', HTTP_HTDOCS.'scripts'.DIR_SEP);
 if (!defined('HTTP_ROOT_PATH'))    define('HTTP_ROOT_PATH', DIR_SEP.PRO_NAME.DIR_SEP);
@@ -65,6 +66,7 @@ if (!defined('ROOT_SERV')){    define('ROOT_SERV', $_SERVER['PHP_SELF']);}
 //echo 'linia: '.__LINE__.' HTTP_PICTURES_PATH: '.HTTP_PICTURES_PATH.'<br>';
 //echo 'linia: '.__LINE__.' HTTP_BACKGROUND_PATH: '.HTTP_BACKGROUND_PATH.'<br>';
 //echo 'linia: '.__LINE__.' HTTP_VIEWS_PATH: '.HTTP_VIEWS_PATH.'<br>';
+//echo 'linia: '.__LINE__.' HTTP_STABLEVIEWS_PATH: '.HTTP_STABLEVIEWS_PATH.'<br>';
 //echo 'linia: '.__LINE__.' HTTP_STYLES_PATH: '.HTTP_STYLES_PATH.'<br>';
 //echo 'linia: '.__LINE__.' ROOT: '.ROOT.'<br>';
 //echo 'linia: '.__LINE__.' PRO_NAME: '.PRO_NAME.'<br>----------------------<br>';
@@ -82,12 +84,14 @@ if (!defined('HDD_IMG_PATH'))    define('HDD_IMG_PATH', HDD_FILES_PATH  . 'Img'.
 if (!defined('HDD_MODELS_PATH'))    define('HDD_MODELS_PATH', HDD_PATH  . 'Models'. DIRECTORY_SEPARATOR);
 if (!defined('HDD_STYLES_PATH'))    define('HDD_STYLES_PATH', HDD_PATH  . 'Styles'. DIRECTORY_SEPARATOR);
 if (!defined('HDD_VIEWS_PATH'))    define('HDD_VIEWS_PATH', HDD_PATH  . 'Views'. DIRECTORY_SEPARATOR);
+if (!defined('HDD_STABLEVIEWS_PATH'))    define('HDD_STABLEVIEWS_PATH', HDD_VIEWS_PATH  . 'StableViews'. DIRECTORY_SEPARATOR);
 if (!defined('HDD_PICTURES_PATH'))    define('HDD_PICTURES_PATH', HDD_PATH  . 'Pictures'. DIRECTORY_SEPARATOR);
 if (!defined('HDD_SCRIPT_PATH'))    define('HDD_SCRIPT_PATH', HDD_PATH  . 'scripts'. DIRECTORY_SEPARATOR);
 
 //echo 'linia: '.__LINE__.' HDD_SCRIPT_PATH: '.HDD_SCRIPT_PATH.'<br>';
 //echo 'linia: '.__LINE__.' HDD_PICTURES_PATH: '.HDD_PICTURES_PATH.'<br>';
 //echo 'linia: '.__LINE__.' HDD_VIEWS_PATH: '.HDD_VIEWS_PATH.'<br>';
+//echo 'linia: '.__LINE__.' HDD_STABLEVIEWS_PATH: '.HDD_STABLEVIEWS_PATH.'<br>';
 //echo 'linia: '.__LINE__.' HDD_STYLES_PATH: '.HDD_STYLES_PATH.'<br>';
 //echo 'linia: '.__LINE__.' HDD_MODELS_PATH: '.HDD_MODELS_PATH.'<br>';
 //echo 'linia: '.__LINE__.' HDD_IMG_PATH: '.HDD_IMG_PATH.'<br>';

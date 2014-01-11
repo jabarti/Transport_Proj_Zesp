@@ -71,10 +71,16 @@ function LoadView($view_name){
             return HDD_VIEWS_PATH.$view_name.'.php';
         break;
     
+        case 'OtherInfo':
+//            echo '<br>linia: '.__LINE__.' from: '.__FILE__.' <br>View_name: '.$view_name. " <<-tak???";
+//            $_SESSION['title'] = 'Main | Główna';
+            return HDD_STABLEVIEWS_PATH.$view_name.'.php';
+        break;    
+    
         case 'CompInfo':
 //            echo '<br>linia: '.__LINE__.' from: '.__FILE__.' <br>View_name: '.$view_name. " <<-tak???";
 //            $_SESSION['title'] = 'Login | Logowanie';
-            return HDD_VIEWS_PATH.$view_name.'.php';
+            return HDD_STABLEVIEWS_PATH.$view_name.'.php';
         break;
     
         default:
@@ -101,15 +107,20 @@ function IncludeClassFile($file){
     }
 }
 //                <td><input type="text" id="'.$key.'" name="'.$key.'" value="'.(isset($_SESSION['.$key.'])) ? $_SESSION['.$key.']: '.$text.'.'"></input> </td>
-function CreateInForm($array){
+function CreateTextForm($array, $readonly=false){
     foreach ($array as $key => $value){
+        if($readonly){
+            $readonly = 'readonly=readonly';
+        }else{ 
+            $readonly='';
+        }
         
         if (isset($_SESSION[$key])){
             $value = $_SESSION[$key];
         }
         echo'<tr>
                 <td>'.$key.': <span id="red">*</span></td>
-                <td><input type="text" id="'.$key.'" name="'.$key.'" value="'.$value.'"></input> </td>
+                <td><input type="text" id="'.$key.'" name="'.$key.'" value="'.$value.'" '.$readonly.' "></input> </td>
              </tr>
             <tr>
                 <td colspan="2"><div id="error'.$key.'" class="error"></div></td>
@@ -117,23 +128,49 @@ function CreateInForm($array){
     }
 }
 
-function CreateForm($array){
-    foreach ($array as $key => $row){
-        foreach ($row as $key2 => $val){
+function CreateHiddenTextForm($array){
+    foreach ($array as $key => $value){
         
-            if (isset($_SESSION[$key2])){
-                $val = $_SESSION[$key2];
-            }
-            echo'<tr>
-                    <td>'.$key.': <span id="red">*</span></td>
-                    <td><input type="'.$key.'" id="'.$key2.'" name="'.$key2.'" value="'.$val.'"></input> </td>
-                </tr>
-                <tr>
-                    <td colspan="2"><div id="error'.$key2.'" class="error"></div></td>
-                </tr>';
+        if (isset($_SESSION[$key])){
+            $value = $_SESSION[$key];
         }
+        echo'<tr>
+                <td><input type="hidden" colspan = 2 id="'.$key.'" name="'.$key.'" value="'.$value.'"></input> </td>
+             </tr>';
     }
 }
+
+function CreateTextareaForm($array, $cols, $rows){
+    foreach ($array as $key => $value){
+        
+        if (isset($_SESSION[$key])){
+            $value = $_SESSION[$key];
+        }
+        echo'<tr>
+                <td>'.$key.'</td>
+                <td><textarea id="'.$key.'"   name="'.$key.'"   cols="'.$cols.'" rows="'.$rows.'">'.$value.'</textarea></td>
+             </tr>';
+    }
+}
+
+
+//function CreateForm($array){
+//    foreach ($array as $key => $row){
+//        foreach ($row as $key2 => $val){
+//        
+//            if (isset($_SESSION[$key2])){
+//                $val = $_SESSION[$key2];
+//            }
+//            echo'<tr>
+//                    <td>'.$key.': <span id="red">*</span></td>
+//                    <td><input type="'.$key.'" id="'.$key2.'" name="'.$key2.'" value="'.$val.'"></input> </td>
+//                </tr>
+//                <tr>
+//                    <td colspan="2"><div id="error'.$key2.'" class="error"></div></td>
+//                </tr>';
+//        }
+//    }
+//}
 
 function InsertInto($table, $formSubmitName){
     $SQL ='';

@@ -8,7 +8,6 @@
  * @author Bartosz M. Lewiński <jabarti@wp.pl>
  ****************************************************/
 
-//echo '<br>linia: '.__LINE__.' You are NOT logged';
 if(Logged()){
     switch($_SESSION['upraw']){
         case 'admin':
@@ -17,15 +16,25 @@ if(Logged()){
         break;
         case 'klient':
                  $view_name = array('CompInfo', 'OtherInfo', 'Form_Contact', 'Prices');
-                 $arrFormCont = array('imie' => '','nazwisko'=> '', 'email' => '', 'phone' => '', 'klient_ID_Klient' => $_SESSION['uzytk']);
+            
+                 $arrFormCont = array('email' => '', 'phone' => '');
+                 $arrFormContUR = array('imie' => '','nazwisko'=> '');
+                 $arrFormContHidd = array('klient_ID_Klient' => $_SESSION['uzytk']);
+                 $arrFormContTArea = array('zgloszenie' => 'Enter your request here...');
+        break;   
+        case 'pracownik':
+                 $view_name = array('CompInfo', 'OtherInfo');
+        break;
+        default:
+                 $view_name = array('CompInfo', 'OtherInfo');
         break;
     }
-//     $view_name = array('CompInfo', 'OtherInfo', 'Form_Contact');
-//     $arrFormCont = array('imie' => '','nazwisko'=> '', 'email' => '', 'phone' => '');
-}else{
-//     echo '<br>linia: '.__LINE__.' You are logged';    
+}else{    
      $view_name = array('Form_Contact', 'CompInfo', 'OtherInfo', 'Prices');
      $arrFormCont = array('imie' => '','nazwisko'=> '', 'email' => '', 'phone' => '');
+     $arrFormContUR = array();
+     $arrFormContHidd = array();
+     $arrFormContTArea = array('zgloszenie' => 'Enter your request here...');
 }   
             
 foreach ($view_name as $key => $value){
