@@ -1,4 +1,12 @@
-﻿20140110g2234
+﻿20140111g0057
+[master 5d66e15] Wyczyszczony form + log
+ 12 files changed, 227 insertions(+), 165 deletions(-)
+ create mode 100644 ExternalResources/Git revisions.txt
+ rewrite htdocs/Models/LogInPanel_Mod.php (96%)
+ rewrite htdocs/Views/LogInPanel.php (60%)
+
+
+20140110g2234
 [master 3eecf73] Basic Form Function
  9 files changed, 311 insertions(+), 41 deletions(-)
  create mode 100644 htdocs/scripts/FunctionsJS.js

@@ -27,8 +27,8 @@ $_SESSION['title'] = 'Logowanie';
             <td><select name="uzytkownik" >															 <!-- To jest absolutnie niepoprawne i ma by� USUNIETE!!!! -->
                     <option>jabarti</option>
                     <option>admin</option>
-                    <option>brak</option>
-                    <option>handl</option>
+                    <option>pracownik</option>
+                    <option>Alus</option>
             </select></td>
 	</tr>
 	<tr>

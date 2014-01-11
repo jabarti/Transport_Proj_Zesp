@@ -10,14 +10,38 @@
 
 require_once "../common.inc.php";
 $arrContForm = array();
-
+$SQL ='';
 if (isset($_POST['ContactForm'])){
+    $SQL .= 'INSERT INTO `formularz` (';
+            
     foreach ($_POST as $key => $value){
-//        echo '<br>$POST["'.$key.'"] = '.$value;
+        echo '<br>$POST["'.$key.'"] = '.$value;
+        if ($key != 'ContactForm'){
+            $SQL .= '`'.$key.'`,';
+        }else{
+            $SQL .= ') VALUES (';
+        }
+    }  
+    foreach ($_POST as $key => $value){
+        if ($key != 'ContactForm'){
+            $SQL .= '"'.$value.'",';
+        }else{
+            $SQL .= ');';
+        }
+    }  
 //        $arrContForm += $key => $value;
+   echo "<br>Oto SQL: ".$SQL;
+   
+   mysql_query($SQL) or die ('<br><b>SQL is wrong</b>');
         $_SESSION[$key] = $value;
         $arrContForm[$key] = $value;
-    }
+
+    
+//    $Form = new Formularz();
+    
+    
+    
+    
 }
 //$_SESSION['arrContForm'] = $arrContForm;
 
@@ -27,5 +51,5 @@ if (isset($_POST['ContactForm'])){
 //var_dump($arrContForm);             // use it to work here!!!!!
 //echo '<br>=====<br>session?($arrContForm):';
 //var_dump($_SESSION['arrContForm']);  // use it to work and send ir somewhere!!!!!
-header("Location: ".HTTP_HTDOCS.'Index.php');
+//header("Location: ".HTTP_HTDOCS.'Index.php');
 ?>
