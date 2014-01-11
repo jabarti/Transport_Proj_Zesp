@@ -1,4 +1,10 @@
-﻿20140111g0057
+﻿20140110g2234
+[master bed4d66] Tabela formularz, budowa sql do obsł Form
+ 7 files changed, 320 insertions(+), 51 deletions(-)
+ create mode 100644 ExternalResources/20140111 DBChanges.sql
+
+
+20140111g0057
 [master 5d66e15] Wyczyszczony form + log
  12 files changed, 227 insertions(+), 165 deletions(-)
  create mode 100644 ExternalResources/Git revisions.txt

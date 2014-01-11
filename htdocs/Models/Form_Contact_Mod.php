@@ -11,28 +11,34 @@
 require_once "../common.inc.php";
 $arrContForm = array();
 $SQL ='';
+$arr='';
 if (isset($_POST['ContactForm'])){
     $SQL .= 'INSERT INTO `formularz` (';
             
     foreach ($_POST as $key => $value){
         echo '<br>$POST["'.$key.'"] = '.$value;
         if ($key != 'ContactForm'){
-            $SQL .= '`'.$key.'`,';
-        }else{
-            $SQL .= ') VALUES (';
+            $arr[$key] = $key;
         }
-    }  
+    } 
+    $SQL .= '`'.join( "`,`", $arr).'`) VALUES (';
+    $arr = '';
+
     foreach ($_POST as $key => $value){
         if ($key != 'ContactForm'){
-            $SQL .= '"'.$value.'",';
-        }else{
-            $SQL .= ');';
+            $arr[$value] = $value;
         }
     }  
+    
+    $SQL .= '"'.join( '","', $arr).'");';
+            
 //        $arrContForm += $key => $value;
    echo "<br>Oto SQL: ".$SQL;
+//   echo '<br>'.var_dump($arr);
+//   echo '<br>'.join(',',$arr);
    
    mysql_query($SQL) or die ('<br><b>SQL is wrong</b>');
+   
         $_SESSION[$key] = $value;
         $arrContForm[$key] = $value;
 
