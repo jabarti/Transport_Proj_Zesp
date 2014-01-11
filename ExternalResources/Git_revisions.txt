@@ -1,4 +1,9 @@
-﻿20140110g0303  SHA1 -> 2212c30624bc2ecde392ba1df30e73a65fb038ef
+20140111g0938
+[master 55d5dab] Different Form SQL + 1 table
+ 8 files changed, 48 insertions(+), 9 deletions(-)
+ create mode 100644 htdocs/Views/Prices.php
+
+﻿20140111g0303  SHA1 -> 2212c30624bc2ecde392ba1df30e73a65fb038ef
 [master 2212c30] SQL Function InsertInto
  3 files changed, 66 insertions(+), 62 deletions(-)
  rewrite htdocs/Models/Form_Contact_Mod.php (60%)
@@ -7,7 +12,7 @@
 #       modified:   htdocs/PHP_Functions.php
 
 
-20140110g0249
+20140111g0249
 [master f3043f7] SQL foreach!!!
  2 files changed, 20 insertions(+), 8 deletions(-)
 modified:   ExternalResources/Git revisions.txt
@@ -15,7 +20,7 @@ modified:   htdocs/Models/Form_Contact_Mod.php
 
 
 
-20140110g0234
+20140111g0234
 [master bed4d66] Tabela formularz, budowa sql do obsł Form
  7 files changed, 320 insertions(+), 51 deletions(-)
  create mode 100644 ExternalResources/20140111 DBChanges.sql
