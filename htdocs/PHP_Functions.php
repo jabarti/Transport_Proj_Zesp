@@ -134,4 +134,35 @@ function CreateForm($array){
         }
     }
 }
+
+function InsertInto($table, $formSubmitName){
+    $SQL ='';
+    $arr='';
+    if (isset($_POST[$formSubmitName])){
+        $SQL .= 'INSERT INTO `'.$table.'` (';
+            
+        foreach ($_POST as $key => $value){
+//            echo '<br>$POST["'.$key.'"] = '.$value;
+            if ($key != $formSubmitName)
+                $arr[$key] = $key;
+        }
+        
+        $SQL .= '`'.join( "`,`", $arr).'`) VALUES (';
+        $arr = '';
+
+        foreach ($_POST as $key => $value){
+        if ($key != $formSubmitName)
+            $arr[$value] = $value;
+        }  
+    
+        $SQL .= '"'.join( '","', $arr).'");';
+          
+        echo "<br>Oto SQL: ".$SQL;
+        if(mysql_query($SQL)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
 ?>
