@@ -68,8 +68,8 @@ if(isset($_POST['uzytkownik'])&& isset($_POST['pass'])){
 //                        
                         //================= to bedzie klucz sesji!!
                         $uzytk = mysql_result($mq_Log_001, 0, 0);
-                        $_SESSION['uzytk'] = $uzytk;
-                        echo '<br>SESION uzytk: '.$_SESSION['uzytk'];
+                        $_SESSION['uzytkID'] = $uzytk;
+                        echo '<br>SESION uzytk: '.$_SESSION['uzytkID'];
                                                    
 /*SQL 04*/		$SQL_Log_004 = sprintf("SELECT * FROM `osoba` WHERE `ID_Osoba` = '".mysql_result($mq_Log_001, 0, 0)."'");
                         echo '<br>linia: '.__LINE__.$SQL_Log_004."<br>";
@@ -94,10 +94,13 @@ if(isset($_POST['uzytkownik'])&& isset($_POST['pass'])){
                          
                           
                         echo '<br>linia: '.__LINE__."\$uzytk: ".$uzytk;
-                        echo '<br>linia: '.__LINE__."\$_SESSION\[\'uzytk\'\]: ".$_SESSION['uzytk'];
+                        echo '<br>linia: '.__LINE__."\$_SESSION\[\'uzytkID\'\]: ".$_SESSION['uzytkID'];
                         echo '<br>linia: '.__LINE__."\$_SESSION\[\'user'\]: ".$_SESSION['user'];
                         echo '<br>linia: '.__LINE__.$ref;
-                                                   
+                        
+/*SQL 05*/              $SQL_Log_005 = sprintf('UPDATE `login` SET `lastLogin`= "'.$_POST['lastLogin'].'" WHERE `ID_Osoba` = '.$_SESSION["uzytkID"].';');
+                        echo '<br>$SQL_Log_005: '.$SQL_Log_005;
+                        mysql_query($SQL_Log_005);
                         unset($_GET['Main_view_name']);
                       header('Location: '.$ref.'?Main_view_name=main');   	// - wróci do strony z której było logowanie.
                     }

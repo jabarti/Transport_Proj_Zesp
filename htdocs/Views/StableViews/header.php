@@ -6,10 +6,14 @@
         <link rel="shortcut icon" href="<?php echo HTTP_PICTURES_PATH.'favicon_no_euro.ico';?>" type="image/x-icon"/><!---->
 <!--	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
-	 <script type='text/javascript' src="<?php echo HTTP_SCRIPTS_PATH.'jQuery v1.8.3.js';?>"></script><!---->
+	 <!--<script type='text/javascript' src="<?php echo HTTP_SCRIPTS_PATH.'jQuery v1.8.3.js';?>"></script>-->
+         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+         <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
          <script type="text/javascript" src="<?php echo HTTP_SCRIPTS_PATH.'whcookies.js';?>"></script><!---->
          <script type="text/javascript" src="<?php echo HTTP_SCRIPTS_PATH.'FunctionsJS.js';?>"></script><!---->
          <script type="text/javascript" src="<?php echo HTTP_SCRIPTS_PATH.'Valid_ContactForm.js';?>"></script><!---->
+         <script type="text/javascript" src="<?php echo HTTP_SCRIPTS_PATH.'Valid_RegisterPanel.js';?>"></script>
  
         <meta http-equiv="Content-Language" content="PL" />
         

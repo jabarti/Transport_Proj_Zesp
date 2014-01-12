@@ -57,8 +57,8 @@ if (isset($_SESSION['user'])){
 }
 
     require 'DB_Connection.php';
-    require 'buttons.php';
-    require_once 'PHP_Functions.php';
+    require HDD_STABLEVIEWS_PATH.'buttons.php';
+    require_once HDD_SCRIPT_PATH.'PHP_Functions.php';
     require 'PagesInfo.php';
   
     IncludeClassFile('Obiekt.class.php');
@@ -68,9 +68,9 @@ if (isset($_SESSION['user'])){
     
 if (!isset($_COOKIE['user'])){          // SKOŃCZYŁ SIE CZAS SESJI USERA
     unsetter();                         // really works?
-    unset($_SESSION['uzytk']);
+    unset($_SESSION['uzytkID']);
 //    echo ('Sesja usera wygasła');
-//    echo $_SESSION['uzytk'];
+//    echo $_SESSION['uzytkID'];
 //    Logged();
 }
 

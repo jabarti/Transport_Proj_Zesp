@@ -9,8 +9,8 @@ if (isset($_SESSION['count'])){
 if (isset($_POST['uzytkownik'])){
 //    echo '<br>linia: '.__LINE__.' '.$_POST['uzytkownik'];
 }
-if (isset($_SESSION['uzytk'])){
-//    echo '<br>linia: '.__LINE__.' '.$_SESSION['uzytk'];
+if (isset($_SESSION['uzytkID'])){
+//    echo '<br>linia: '.__LINE__.' '.$_SESSION['uzytkID'];
 }
 
 echo '<div id="glowny_index">';

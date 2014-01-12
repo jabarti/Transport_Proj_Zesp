@@ -7,21 +7,28 @@
  * @author   Bartosz M. Lewiński <jabarti@wp.pl>
  ***********************************************/
 ?>
-
-<form id="Contact" action="<?php echo HTTP_MODELS_PATH.'Form_Contact_Mod.php' ?>" method="POST">
-    <table>
-        <th colspan="2"> Formularz zgłoszeniowy </th>
 <?php
+$SESSFormName = 'ContactForm';
 
-//$arrFormCont = array('imie' => '','nazwisko'=> '', 'email' => '', 'phone' => '');
-CreateTextForm($arrFormContUR, true);
+Form('Contact', 'Form_Contact_Mod.php', 'Formularz zgłoszeniowy', 'ContactForm', 'head');
+CreateTextForm($arrFormContUR, false, true);
 CreateTextForm($arrFormCont);
 CreateHiddenTextForm($arrFormContHidd);
-CreateTextareaForm($arrFormContTArea, 25, 5)
-
-?>        
-            <td></td>
-            <td style="text-align: right;"><input type="submit" name="ContactForm" value="Wyślij"></td>
+CreateTextareaForm($arrFormContTArea, 25, 5);
+?>
+        <tr>
+            <!--<td>To może regDate!</td>-->
+            <td colspan="2"><input type="hidden" name="regData" value=" <?php echo date('Y-m-d, H:i:s'); ?>" readonly/><td>
         </tr>
-    </table>
-</form>
+<?php
+Form('Contact', 'Form_Contact_Mod.php', 'Formularz zgłoszeniowy', $SESSFormName, 'foot');
+if (isset($_SESSION[$SESSFormName.'RES'])){
+    if($_SESSION[$SESSFormName.'RES']){
+        echo '<p class="yellow"><b>Formularz skutecznie wysłany.</b></p>';
+    }else{
+        echo '<p class="red"><b>ERROR Nie udało się skutecznie wysłać formularza!!!</b></p>';
+    }
+}else{
+    echo 'Formularz nie wysłany';
+}
+?>        

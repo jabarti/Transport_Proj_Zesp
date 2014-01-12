@@ -8,13 +8,13 @@
  * ********************************************* */
 
 function Logged(){
-//	if(isset($_SESSION['uzytk']) AND !empty($_SESSION['uzytk']) AND isset($_SESSION['user'])){   // Mówi o zmiennych dostępnych w obecnej sesji
-	if(isset($_SESSION['uzytk']) AND !empty($_SESSION['uzytk']) ){   // Mówi o zmiennych dostępnych w obecnej sesji
+//	if(isset($_SESSION['uzytkID']) AND !empty($_SESSION['uzytkID']) AND isset($_SESSION['user'])){   // Mówi o zmiennych dostępnych w obecnej sesji
+	if(isset($_SESSION['uzytkID']) AND !empty($_SESSION['uzytkID']) ){   // Mówi o zmiennych dostępnych w obecnej sesji
 //            echo "<br>Logged() = true<br>";
-//            echo $_SESSION['uzytk'];
+//            echo $_SESSION['uzytkID'];
             return true;
         }else{
-//            echo $_SESSION['uzytk'];
+//            echo $_SESSION['uzytkID'];
 //            echo "<br>Logged() = false<br>";
 //            unset($_COOKIE['user']);
             return false;
@@ -40,6 +40,11 @@ function unsetter(){
 //            unset($_COOKIE[$key]) ;//or die("error");
 //    }
 }
+function DisplayArr($array){
+    foreach($array as $key => $val){
+        echo '<br>$Key: '.$key.' => '.$val;
+    }
+}
 
 function LoadMainView($Main_view_name){
     switch ($Main_view_name){
@@ -54,6 +59,12 @@ function LoadMainView($Main_view_name){
             $_SESSION['title'] = 'Login | Logowanie';
             return HDD_VIEWS_PATH.'LogInPanel.php';
         break;
+    
+        case 'register':
+//            echo '<br>linia: '.__LINE__.' from: '.__FILE__.' <br>Main View_name: '.$Main_view_name. " <-tak?";
+            $_SESSION['title'] = 'Register | Rejestracja';
+            return HDD_VIEWS_PATH.'RegisterPanel.php';
+        break;        
     
         default:
 //            echo '<br>linia: '.__LINE__.' from: '.__FILE__.' <br>Main View_name: '.$Main_view_name. " <-tak?";
@@ -106,8 +117,26 @@ function IncludeClassFile($file){
         }
     }
 }
-//                <td><input type="text" id="'.$key.'" name="'.$key.'" value="'.(isset($_SESSION['.$key.'])) ? $_SESSION['.$key.']: '.$text.'.'"></input> </td>
-function CreateTextForm($array, $readonly=false){
+function Form($id, $file, $title, $name, $place, $method='post'){
+    $file = HTTP_MODELS_PATH.$file;
+    isset($method)?$method:'post';
+    switch($place){
+        case 'head':
+            echo '<form id="'.$id.'" action="'.$file.'" method="'.$method.'">
+                    <table>
+                        <th colspan="2">'.$title.'</th>';
+        break;
+        case 'foot':
+            echo '          <td></td>
+                            <td style="text-align: right;"><input type="submit" name="'.$name.'" value="Wyślij"></td>
+                        </tr>
+                    </table>
+                </form>';
+        break;
+    }
+}
+
+function CreateTextForm($array, $checkerror = true, $readonly=false){
     foreach ($array as $key => $value){
         if($readonly){
             $readonly = 'readonly=readonly';
@@ -118,13 +147,20 @@ function CreateTextForm($array, $readonly=false){
         if (isset($_SESSION[$key])){
             $value = $_SESSION[$key];
         }
-        echo'<tr>
-                <td>'.$key.': <span id="red">*</span></td>
-                <td><input type="text" id="'.$key.'" name="'.$key.'" value="'.$value.'" '.$readonly.' "></input> </td>
-             </tr>
-            <tr>
-                <td colspan="2"><div id="error'.$key.'" class="error"></div></td>
-            </tr>';
+        if ($checkerror){
+            echo'<tr>
+                    <td><span id="red">*</span>'.$key.': </td>
+                    <td><input type="text" id="'.$key.'" name="'.$key.'" value="'.$value.'" '.$readonly.' "></input> </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><div id="error'.$key.'" class="error"></div></td>
+                </tr>';
+        }else{
+            echo'<tr>
+                    <td>'.$key.': </td>
+                    <td><input type="text" id="'.$key.'" name="'.$key.'" value="'.$value.'" '.$readonly.' "></input> </td>
+                </tr>';            
+        }
     }
 }
 
@@ -152,25 +188,26 @@ function CreateTextareaForm($array, $cols, $rows){
              </tr>';
     }
 }
+//<tr>
+//            <td>Użytkownik/Login:</td>
+//            <!--td><input type="text" name="uzytkownik"></td--> <!-- To MA BYć w wersji WORK!!!!!!!!!!!!!!!!!!!!!!!!! -->
+//            <td><select name="uzytkownik" >	 <!-- To jest absolutnie niepoprawne i ma by� USUNIETE!!!! -->
+//                    <option>jabarti</option>
+//                    <option>admin</option>
+//                    <option>spedytor</option>
+//                    <option>Alus</option>
+//            </select></td>
+//	</tr>
+function CreateOptionForm($name, $array){
+    echo'<td>'.$name.': </td>
+         <td><select name="'.$name.'">';
+    foreach ($array as $key => $val){
+        echo'<option>'.$val.'</option>';
+    }
+    echo'   </select></td>
+	</tr>';
+}
 
-
-//function CreateForm($array){
-//    foreach ($array as $key => $row){
-//        foreach ($row as $key2 => $val){
-//        
-//            if (isset($_SESSION[$key2])){
-//                $val = $_SESSION[$key2];
-//            }
-//            echo'<tr>
-//                    <td>'.$key.': <span id="red">*</span></td>
-//                    <td><input type="'.$key.'" id="'.$key2.'" name="'.$key2.'" value="'.$val.'"></input> </td>
-//                </tr>
-//                <tr>
-//                    <td colspan="2"><div id="error'.$key2.'" class="error"></div></td>
-//                </tr>';
-//        }
-//    }
-//}
 
 function InsertInto($table, $formSubmitName){
     $SQL ='';

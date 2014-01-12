@@ -43,3 +43,8 @@ INSERT INTO `apipo`.`login` (`ID_Osoba`, `login`, `Password`, `Uprawnienie`) VAL
 INSERT INTO `apipo`.`formularz` (`imie`,`nazwisko`,`email`,`phone`,`zgloszenie`) VALUES ("Bartek","Lewiński","jabarti@wp.pl","600000000","Enter your request here...");
 
 INSERT INTO `apipo`.`klient` (`ID_Klient`, `osoba_ID_Osoba`) VALUES (NULL, '1');
+
+INSERT INTO `apipo`.`pracownik` (`ID_Pracownik`, `Stanowisko`, `Pensja`, `data_zatrudnienia`, `data_zwolnienia`, `tel_sluzb`, `mail_sluzb`, `osoba_ID_Osoba`) 
+VALUES (NULL, 'Spedytor', '2000', '2014-01-07', NULL, '12121212', 'rab@firma.com', '4');
+
+INSERT INTO `apipo`.`login` (`ID_Osoba`, `login`, `Password`, `Uprawnienie`) VALUES ('4', 'spedytor', 'ff12bbd8c907af067070211d87bdf098be17375b', 'pracownik');

@@ -24,10 +24,10 @@ $_SESSION['title'] = 'Logowanie';
         <tr>
             <td>Użytkownik/Login:</td>
             <!--td><input type="text" name="uzytkownik"></td--> <!-- To MA BYć w wersji WORK!!!!!!!!!!!!!!!!!!!!!!!!! -->
-            <td><select name="uzytkownik" >															 <!-- To jest absolutnie niepoprawne i ma by� USUNIETE!!!! -->
+            <td><select name="uzytkownik" >	 <!-- To jest absolutnie niepoprawne i ma by� USUNIETE!!!! -->
                     <option>jabarti</option>
                     <option>admin</option>
-                    <option>pracownik</option>
+                    <option>spedytor</option>
                     <option>Alus</option>
             </select></td>
 	</tr>
@@ -35,6 +35,10 @@ $_SESSION['title'] = 'Logowanie';
             <td>Hasło:</td>
             <td><input type="password" name="pass" value="haslo"></td> <!-- Remove 'haslo" in Workable!!!!-->
 	</tr>
+        <tr>
+            <!--<td>To może być last login!</td>-->
+            <td colspan="2"><input type="hidden" name="lastLogin" value=" <?php echo date('Y-m-d, H:i:s'); ?>" readonly/><td>
+        </tr>
     </table>
     <input type="submit" value="Zaloguj"/>
 </form>

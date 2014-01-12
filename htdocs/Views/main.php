@@ -11,22 +11,25 @@
 if(Logged()){
     switch($_SESSION['upraw']){
         case 'admin':
-                 $view_name = array('CompInfo', 'OtherInfo');
+                 $view_name = array('CompInfo', 'OtherInfo', 'Prices');
 //                 $arrFormCont = array('imie' => '','nazwisko'=> '', 'email' => '', 'phone' => '');
         break;
+    
         case 'klient':
                  $view_name = array('CompInfo', 'OtherInfo', 'Form_Contact', 'Prices');
             
                  $arrFormCont = array('email' => '', 'phone' => '');
                  $arrFormContUR = array('imie' => '','nazwisko'=> '');
-                 $arrFormContHidd = array('klient_ID_Klient' => $_SESSION['uzytk']);
+                 $arrFormContHidd = array('klient_ID_Klient' => $_SESSION['uzytkID']);
                  $arrFormContTArea = array('zgloszenie' => 'Enter your request here...');
         break;   
+    
         case 'pracownik':
-                 $view_name = array('CompInfo', 'OtherInfo');
+                 $view_name = array('CompInfo', 'OtherInfo', 'Prices');
         break;
+    
         default:
-                 $view_name = array('CompInfo', 'OtherInfo');
+                 $view_name = array('CompInfo', 'OtherInfo', 'Prices');
         break;
     }
 }else{    

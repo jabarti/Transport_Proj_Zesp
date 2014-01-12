@@ -1,16 +1,21 @@
 <?php
-
-/**
- * Filename: Form_Contact_Mod.php
- * 
- * Created: 2014-01-10
+/* * **************************************************
+ * Project:     Transport_Proj_Zesp
+ * Filename:    Form_Contact_Mod.php
+ * Encoding:    UTF-8
+ * Created:     2014-01-10
  *
- * @author Bartosz M. Lewiński <jabarti@wp.pl>
- */
-
+ * Author       Bartosz M. Lewiński <jabarti@wp.pl>
+ * ************************************************* */
 require_once "../common.inc.php";
 
-InsertInto('formularz', 'ContactForm');
+if(InsertInto('formularz', 'ContactForm')){
+    $_SESSION['ContactFormRES']=true;
+}else{
+    $_SESSION['ContactFormRES']=false;
+}
+
+
 
 //    $Form = new Formularz();
 

@@ -7,6 +7,9 @@
  *
  * Author       Bartosz M. Lewiński <jabarti@wp.pl>
  * ************************************************ */
+
+ ECHO'  TODO:     TRZEBA ZROBIĆ ŻEBY TO  POBIERAŁO DANE Z BAZY !';
+
 $TabTitle = 'Tytuł';
 $tab = 
 '<table border="1">
