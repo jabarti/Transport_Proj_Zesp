@@ -1,6 +1,6 @@
 <?php
 require_once "common.inc.php";
-require_once HDD_STABLEVIEWS_PATH.'header.php';
+//require_once HDD_STABLEVIEWS_PATH.'header.php';
 
 if (isset($_SESSION['count'])){
     $_SESSION['count']++;

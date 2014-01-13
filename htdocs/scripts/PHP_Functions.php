@@ -50,28 +50,28 @@ function LoadMainView($Main_view_name){
     switch ($Main_view_name){
         case 'main':
 //            echo '<br>linia: '.__LINE__.' from: '.__FILE__.' <br>Main View_name: '.$Main_view_name. " <-tak?";
-            $_SESSION['title'] = 'Main | Główna';
+//            $_SESSION['title'] = 'Main | Główna';
             return HDD_VIEWS_PATH.'main.php';
         break;
     
         case 'login':
 //            echo '<br>linia: '.__LINE__.' from: '.__FILE__.' <br>Main View_name: '.$Main_view_name. " <-tak?";
-            $_SESSION['title'] = 'Login | Logowanie';
+//            $_SESSION['title'] = 'Login | Logowanie';
             return HDD_VIEWS_PATH.'LogInPanel.php';
         break;
     
         case 'register':
 //            echo '<br>linia: '.__LINE__.' from: '.__FILE__.' <br>Main View_name: '.$Main_view_name. " <-tak?";
-            $_SESSION['title'] = 'Register | Rejestracja';
+//            $_SESSION['title'] = 'Register | Rejestracja';
             return HDD_VIEWS_PATH.'RegisterPanel.php';
         break;        
     
         default:
 //            echo '<br>linia: '.__LINE__.' from: '.__FILE__.' <br>Main View_name: '.$Main_view_name. " <-tak?";
-            $_SESSION['title'] = 'Main | Główna | Default';
+//            $_SESSION['title'] = 'Main | Główna';// | Default';
             return HDD_VIEWS_PATH.'main.php';
         break; 
-}
+    }
 }
 
 function LoadView($view_name){
@@ -159,6 +159,9 @@ function CreateTextForm($array, $checkerror = true, $readonly=false){
             echo'<tr>
                     <td>'.$key.': </td>
                     <td><input type="text" id="'.$key.'" name="'.$key.'" value="'.$value.'" '.$readonly.' "></input> </td>
+                </tr>                
+                <tr>
+                    <td colspan="2"><div id="error'.$key.'"></div></td>
                 </tr>';            
         }
     }

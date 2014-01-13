@@ -13,22 +13,22 @@ session_start();
 
 //echo session_id();
 
-echo '<div id="LogInfo" style="left: 5px; opacity:0,5;">';
-if (isset($_SESSION)){
-//    echo '<br>linia: '.__LINE__.' $_SESSION[\'count\']: '.$_SESSION['count'].'<br>';
-//    echo 'session set';
-        foreach ($_SESSION as $key => $value){
-                echo '<br>$_SESSION['.$key.'] => '. $value;
-        }
-echo '</div>';
-//        echo '<br>';
-}
-//else{
-//    echo '<br>session WAS NOT set, I\'ve set it<br>';
-    //session_start();
-    $_SESSION['count'] = 1;
-//    echo '<br>linia: '.__LINE__.' '.$_SESSION['count'].'<br>';
+//echo '<div id="LogInfo" style="left: 5px; opacity:0,5;">';
+//if (isset($_SESSION)){
+////    echo '<br>linia: '.__LINE__.' $_SESSION[\'count\']: '.$_SESSION['count'].'<br>';
+////    echo 'session set';
+//        foreach ($_SESSION as $key => $value){
+//                echo '<br>$_SESSION['.$key.'] => '. $value;
+//        }
+//echo '</div>';
+////        echo '<br>';
 //}
+////else{
+////    echo '<br>session WAS NOT set, I\'ve set it<br>';
+//    //session_start();
+//    $_SESSION['count'] = 1;
+////    echo '<br>linia: '.__LINE__.' '.$_SESSION['count'].'<br>';
+////}
 
 if(!empty($_SERVER['HTTP_REFERER'])) 
 		$ref = $_SERVER['HTTP_REFERER'];   	// PHP.NET: The address of the page (if any) which referred
@@ -57,9 +57,11 @@ if (isset($_SESSION['user'])){
 }
 
     require 'DB_Connection.php';
-    require HDD_STABLEVIEWS_PATH.'buttons.php';
+//    require_once HDD_STABLEVIEWS_PATH.'header.php';
+//    require HDD_STABLEVIEWS_PATH.'buttons.php';
     require_once HDD_SCRIPT_PATH.'PHP_Functions.php';
     require 'PagesInfo.php';
+    require_once HDD_STABLEVIEWS_PATH.'header.php';
   
     IncludeClassFile('Obiekt.class.php');
     IncludeClassFile('Person.class.php');
@@ -74,6 +76,16 @@ if (!isset($_COOKIE['user'])){          // SKOŃCZYŁ SIE CZAS SESJI USERA
 //    Logged();
 }
 
+echo '<div id="LogInfo" style="left: 5px; opacity:0,5;">';
+if (isset($_SESSION)){
+//    echo '<br>linia: '.__LINE__.' $_SESSION[\'count\']: '.$_SESSION['count'].'<br>';
+//    echo 'session set';
+        foreach ($_SESSION as $key => $value){
+                echo '<br>$_SESSION['.$key.'] => '. $value;
+        }
+echo '</div>';
+}
+
 if(Logged()){
     echo '<div id="LogInfo">
             <h1>ZALOGOWANY</h1>
@@ -83,7 +95,7 @@ if(Logged()){
 }else{
     echo '<div id="LogInfo"><h1>NIE ZALOGOWANY</h1></div>';
 }
-
+        require HDD_STABLEVIEWS_PATH.'buttons.php';
 
 //    echo "<br>END common.inc.php<br>=================================<br>";
 ?>

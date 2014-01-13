@@ -18,8 +18,8 @@ if(Logged()){
         case 'klient':
                  $view_name = array('CompInfo', 'OtherInfo', 'Form_Contact', 'Prices');
             
-                 $arrFormCont = array('email' => '', 'phone' => '');
                  $arrFormContUR = array('imie' => '','nazwisko'=> '');
+                 $arrFormCont = array('email' => '', 'phone' => '');
                  $arrFormContHidd = array('klient_ID_Klient' => $_SESSION['uzytkID']);
                  $arrFormContTArea = array('zgloszenie' => 'Enter your request here...');
         break;   

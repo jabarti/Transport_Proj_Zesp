@@ -4,6 +4,7 @@
  * Wi�cej informacji: http://webhelp.pl/artykuly/okienko-z-informacja-o-ciasteczkach-cookies/
  * 
  */
+alert('Cookie');
 
 function WHCreateCookie(name, value, days) {
     var date = new Date();
