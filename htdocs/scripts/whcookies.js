@@ -4,7 +4,6 @@
  * Więcej informacji: http://webhelp.pl/artykuly/okienko-z-informacja-o-ciasteczkach-cookies/
  * 
  */
-console.log('WHCookies');
 
 function WHCreateCookie(name, value, days) {
     var date = new Date();

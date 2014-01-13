@@ -69,6 +69,22 @@ CreateOptionForm('Plec', $arrPlecOption);
             <td>Data urodzenia</td>
             <td ><input type="text" id="datepicker" name="data_czas" /><td>
         </tr>
+<!--        <tr>
+            <td>Select your favorite color: </td>
+            <td><input type="color" name="favcolor"></td>
+        </tr>-->
+        <tr>
+          <td>E-mail: </td>
+          <td><input type="email" name="e-mail2"></td>
+        </tr>
+<!--        <tr>
+          <td>Quantity (between 1 and 5): </td>
+          <td><input type="number" name="quantity" min="1" max="5"></td>
+        </tr>-->
+        <tr>
+          <td>range(between 1 and 10): </td>
+          <td>0<input type="range" name="points" min="1" max="10">10</td>
+        </tr>
         <tr>
             <td>To może regDate!</td>
             <td ><input type="date" name="regDate" value=" <?php echo date('Y-m-d, H:i:s'); ?>" readonly/><td>

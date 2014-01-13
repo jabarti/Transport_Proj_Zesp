@@ -1,0 +1,1 @@
+select * from bartilev_APIPO.osoba;
