@@ -12,7 +12,10 @@
          <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
          <script type="text/javascript" src="<?php echo HTTP_SCRIPTS_PATH.'whcookies.js';?>"></script><!---->
          <script type="text/javascript" src="<?php echo HTTP_SCRIPTS_PATH.'FunctionsJS.js';?>"></script><!---->
-<!--         <script type="text/javascript" src="<?php 
+         <script type="text/javascript" src="<?php 
+            if (!isset($_COOKIE['cookies_accepted'])){
+                echo '2nd ONLOAD blocked!!';
+            }
             switch ($Main_view_name){
                 case 'register':
                     echo HTTP_SCRIPTS_PATH.'Valid_RegisterPanel.js';
@@ -21,9 +24,9 @@
                     echo HTTP_SCRIPTS_PATH.'Valid_ContactForm.js';
                 break;
             }
-        ?>"></script>-->
+        ?>"></script>
 
-         <script type="text/javascript" src="<?php echo HTTP_SCRIPTS_PATH.'Valid_ContactForm.js';?>"></script>
+         <!--<script type="text/javascript" src="<?php echo HTTP_SCRIPTS_PATH.'Valid_ContactForm.js';?>"></script>-->
          <!--<script type="text/javascript" src="<?php echo HTTP_SCRIPTS_PATH.'Valid_RegisterPanel.js';?>"></script>-->
  
         <meta http-equiv="Content-Language" content="PL" />

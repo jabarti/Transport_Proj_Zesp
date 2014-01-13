@@ -1,10 +1,10 @@
 /*
- * Skrypt wy�wietlaj�cy okienko z informacj� o wykorzystaniu ciasteczek (cookies)
+ * Skrypt wyświetlający okienko z informacji o wykorzystaniu ciasteczek (cookies)
  * 
- * Wi�cej informacji: http://webhelp.pl/artykuly/okienko-z-informacja-o-ciasteczkach-cookies/
+ * Więcej informacji: http://webhelp.pl/artykuly/okienko-z-informacja-o-ciasteczkach-cookies/
  * 
  */
-alert('Cookie');
+console.log('WHCookies');
 
 function WHCreateCookie(name, value, days) {
     var date = new Date();
@@ -23,7 +23,7 @@ function WHReadCookie(name) {
 	return null;
 }
 
-window.onload = WHCheckCookies;
+window.onload = WHCheckCookies;  // 2 functions checked onload  - it could cause bugs!!!
 
 function WHCheckCookies() {
     if(WHReadCookie('cookies_accepted') != 'T') {
