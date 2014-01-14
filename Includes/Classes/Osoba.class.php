@@ -186,8 +186,7 @@ class Osoba { //extends Obiekt{
                 `FAX`=                  "'.$this->_FAX.'", 		
                 `email`=                "'.$this->_email.'", 			
                 `Plec`=                 "'.$this->_Plec.'", 				
-                `Data_urodzenia`=       "'.$this->_Data_urodzenia.'",
-                `RegDate`=              "'.$this->_RegDate.'"
+                `Data_urodzenia`=       "'.$this->_Data_urodzenia.'"
               WHERE `ID_Osoba` = '.$ID_Osoba.';';
        
                 echo '<br>linia: '.__LINE__.' '.$sql;/**/
@@ -311,13 +310,15 @@ class Osoba { //extends Obiekt{
 	}
         
         
-        public function getIdByPESEL() {
-                echo '$this->PESEL:'.$this->PESEL;
-		$query = mysql_real_escape_string('SELECT * FROM '.$this->table().' WHERE PESEL='.$this->PESEL.'');
+        public function getId() {
+                echo '$this->PESEL:'.$this->_PESEL;
+//		$query = mysql_real_escape_string('SELECT * FROM '.$this->table().' WHERE PESEL='.$this->_PESEL.';');
+		$query = mysql_real_escape_string('SELECT `ID_Osoba` FROM '.$this->table().' WHERE PESEL='.$this->_PESEL.';');
                 echo '<br>'.$query.'<br>';
-                $res =  mysql_fetch_array(mysql_query($query));
-                var_dump($res);
-                return $this->ID_Osoba = $res[0];
+//                $res =  mysql_fetch_array(mysql_query($query));
+                $res =  mysql_result(mysql_query($query),0);
+//                var_dump($res);
+                return $this->ID_Osoba = $res;
 	}
     
     

@@ -7,7 +7,7 @@
  * @author      Bartosz M. Lewiński <jabarti@wp.pl>
  * ********************************************* */
 
-require_once "common.inc.php";
+//require_once "common.inc.php";
 //require VIEWS_PATH.DIRECTORY_SEPARATOR.'header.php';
 ?>
 

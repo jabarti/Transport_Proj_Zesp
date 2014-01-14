@@ -7,6 +7,7 @@
  *
  * @author Bartosz M. Lewiński <jabarti@wp.pl>
  ****************************************************/
+require_once "common.inc.php";
 
 if(Logged()){
     switch($_SESSION['upraw']){

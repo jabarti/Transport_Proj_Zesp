@@ -29,7 +29,10 @@ switch ($Main_view_name){
     
         case 'register':
             $title = 'Register | Rejestracja';
-        break;        
+        break;       
+        case 'MakeLogin':
+            $title = 'Login/Hasło | Login/Password';
+        break; 
     
         default:
             $title = 'Main | Główna || Default';

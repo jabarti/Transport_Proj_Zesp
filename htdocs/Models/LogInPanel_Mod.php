@@ -70,6 +70,7 @@ if(isset($_POST['uzytkownik'])&& isset($_POST['pass'])){
                         $uzytk = mysql_result($mq_Log_001, 0, 0);
                         $_SESSION['uzytkID'] = $uzytk;
                         echo '<br>SESION uzytk: '.$_SESSION['uzytkID'];
+                        
                                                    
 /*SQL 04*/		$SQL_Log_004 = sprintf("SELECT * FROM `osoba` WHERE `ID_Osoba` = '".mysql_result($mq_Log_001, 0, 0)."'");
                         echo '<br>linia: '.__LINE__.$SQL_Log_004."<br>";
@@ -87,6 +88,7 @@ if(isset($_POST['uzytkownik'])&& isset($_POST['pass'])){
                          $_SESSION['nazwisko'] = $mfr_Log_004['Nazwisko'];
                          $_SESSION['email'] = $mfr_Log_004['email'];
                          $_SESSION['phone'] = $mfr_Log_004['telefon_kom'];
+                         $_SESSION['userLogin'] = $_POST['uzytkownik'];
                          
                         //================= to bedzie Imie i Nazwisko usera
                          $_SESSION['user'] = $mfr_Log_004['Imie'].' '.$mfr_Log_004['Nazwisko'];

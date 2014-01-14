@@ -20,6 +20,9 @@
                 case 'register':
                     echo HTTP_SCRIPTS_PATH.'Valid_RegisterPanel.js';
                 break;
+                case 'MakeLogin':
+                    echo HTTP_SCRIPTS_PATH.'Valid_MakeLoginPanel.js';
+                break;            
                 default:
                     echo HTTP_SCRIPTS_PATH.'Valid_ContactForm.js';
                 break;
@@ -29,9 +32,9 @@
          <!--<script type="text/javascript" src="<?php echo HTTP_SCRIPTS_PATH.'Valid_ContactForm.js';?>"></script>-->
          <!--<script type="text/javascript" src="<?php echo HTTP_SCRIPTS_PATH.'Valid_RegisterPanel.js';?>"></script>-->
  
-        <meta http-equiv="Content-Language" content="PL" />
+        <!--<meta http-equiv="Content-Language" content="PL" />-->
         
-	<meta http-equiv="refresh" content="330"/>  <!-- Od�wie�anie co 5 minut i 30sek = 330 -->
+	<meta http-equiv="refresh" content="300"/>  <!-- Odświeżanie co 5 minut i 30sek = 330 -->
         
 	<!--<link rel="Stylesheet" type="text/css" href="<?php echo HTTP_STYLES_PATH.'reset.css'?>" />-->
 	<link rel="Stylesheet" type="text/css" href="<?php echo HTTP_STYLES_PATH.'style.css'?>" />

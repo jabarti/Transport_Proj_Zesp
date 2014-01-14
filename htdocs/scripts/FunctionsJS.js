@@ -61,6 +61,28 @@ function czyWypelnione(pole)
 	}
 }
 //*/
+ function isValidPassword(pole)
+{
+	var reg = /^([A-Za-z0-9_\-\.]{5,30})$/;   // Na razie !! 
+//        var reg = /^\w*(?=\w*\d)(?=\w*[a-z])(?=\w*[A-Z])\w*$/; //- It works GOOD
+//        
+//        JAKIEŚ NIESPRAWDZONE!!!!!
+//        var reg = /^(?=^.{8,}$)((?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]))|((?=.*\d)(?=.*[A-Z])(?=.*[a-z]))|((?=.*\W+)(?![.\n])(?=.*\d)$/;   // tzw. WYRA�ENIE REGULARNE!! 
+//        var reg = /^(?=[a-z0-9_#@%\*-]*?[A-Z])(?=[a-z0-9_#@%\*-]*?[a-z])(?=[a-z0-9_#@%\*-]*?[0-9])([a-z0-9_#@%\*-]{5,24})$/;
+//        var reg = /^(?=[a-z0-9_#@%\*-]*?[A-Z])([a-z0-9_#@%\*-]{5,24})$/;
+																										// tzn 12$_dsds-bubaaAAAA@wp.pl lub jabarti@23_&&&.com.pl.
+	if((reg.test(pole.value)==false) && (pole.value !=""))
+	{
+//		document.getElementById("error"+pole.id).innerHTML = "Musisz podac prawidlowe hasło,musi mieć od 5 do 24 znaków<br>pośród których musi być co najmniej jedna wielka litera,<br>jedna mała i jedna cyfra. Dodatkowo dozwolone są: _, #, @, %, * i -.";
+		document.getElementById("error"+pole.id).innerHTML = "Musisz podac prawidlowe hasło,<br>musi zawierać co najmniej jedną dużą i małą literę a także cyfrę";
+		return false;
+	}
+	else
+	{
+		document.getElementById("error"+pole.id).innerHTML = "";
+		return true;
+	}
+}
 
  function isValidEmail(pole)
 {
@@ -200,7 +222,7 @@ function areFieldsEqual (pole1, pole2)
 {
 	if (pole1.value != pole2.value)
 	{
-		document.getElementById("error"+pole2.id).innerHTML = "Hasla musza byc takie same!";
+		document.getElementById("error"+pole2.id).innerHTML = "Nowe hasla musza byc takie same!";
 		return false;
 	}
 	else
@@ -209,6 +231,21 @@ function areFieldsEqual (pole1, pole2)
 		return true;
 	}
 }
+
+function arePasswordEqual (pole1, pole2, pole3)
+{
+	if (pole1.value == pole2.value || pole2.value != pole3.value)
+	{
+		document.getElementById("error"+pole3.id).innerHTML = "Nowe hasla musza byc takie same i różne od starego!";
+		return false;
+	}
+	else
+	{
+		document.getElementById("error"+pole3.id).innerHTML = "";
+		return true;
+	}
+}
+
 
 /*		EDIT		*/
 function AddAllFun()

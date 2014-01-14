@@ -45,7 +45,7 @@ mb_internal_encoding('UTF-8') or die ('error');
     
 if (isset($_SESSION['user'])){
 //    echo "<br>Jest Session USER";
-    $expire=time()+60*4.5;			// 2min! - Odświarzanie musi być ustawione na dłuższy czas niż długość życia cookie!!!!!
+    $expire=time()+60*1.5;			// 1.5min! - Odświarzanie musi być ustawione na dłuższy czas niż długość życia cookie!!!!!
     setcookie("user", $_SESSION['user'], $expire);
     
     if (isset($_COOKIE['user'])){
@@ -71,7 +71,9 @@ if (isset($_SESSION['user'])){
 if (!isset($_COOKIE['user'])){          // SKOŃCZYŁ SIE CZAS SESJI USERA
     unsetter();                         // really works?
     unset($_SESSION['uzytkID']);
-//    echo ('Sesja usera wygasła');
+    echo ('Sesja usera wygasła');
+//    header('Location:'.HTTP_MODELS_PATH.'LoggOut_Mod.php');
+    
 //    echo $_SESSION['uzytkID'];
 //    Logged();
 }
