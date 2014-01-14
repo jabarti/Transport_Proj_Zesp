@@ -13,6 +13,7 @@ if(Logged()){
         case 'admin':
                  $view_name = array('CompInfo', 'OtherInfo', 'Prices');
 //                 $arrFormCont = array('imie' => '','nazwisko'=> '', 'email' => '', 'phone' => '');
+//                 $buttons = array('localhost', 'glowna', 'register', 'loggin');
         break;
     
         case 'klient':

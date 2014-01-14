@@ -137,6 +137,7 @@ function Form($id, $file, $title, $name, $place, $method='post'){
 }
 
 function CreateTextForm($array, $checkerror = true, $readonly=false){
+    
     foreach ($array as $key => $value){
         if($readonly){
             $readonly = 'readonly=readonly';
@@ -146,6 +147,7 @@ function CreateTextForm($array, $checkerror = true, $readonly=false){
         
         if (isset($_SESSION[$key])){
             $value = $_SESSION[$key];
+//            unset($_SESSION[$key]);
         }
         if ($checkerror){
             echo'<tr>
@@ -172,6 +174,7 @@ function CreateHiddenTextForm($array){
         
         if (isset($_SESSION[$key])){
             $value = $_SESSION[$key];
+//            unset($_SESSION[$key]);
         }
         echo'<tr>
                 <td><input type="hidden" colspan = 2 id="'.$key.'" name="'.$key.'" value="'.$value.'"></input> </td>
@@ -184,6 +187,7 @@ function CreateTextareaForm($array, $cols, $rows){
         
         if (isset($_SESSION[$key])){
             $value = $_SESSION[$key];
+//            unset($_SESSION[$key]);
         }
         echo'<tr>
                 <td>'.$key.'</td>
@@ -219,7 +223,7 @@ function InsertInto($table, $formSubmitName){
         $SQL .= 'INSERT INTO `'.$table.'` (';
             
         foreach ($_POST as $key => $value){
-            echo '<br>$POST["'.$key.'"] = '.$value;
+            echo '$POST["'.$key.'"] = '.$value;
             if ($key != $formSubmitName)
                 $arr[$key] = $key;
         }

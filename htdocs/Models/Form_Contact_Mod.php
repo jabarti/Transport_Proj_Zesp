@@ -9,13 +9,16 @@
  * ************************************************* */
 require_once "../common.inc.php";
 
+//foreach ($_POST as $k){
+//    $_SESSION[$k]=$_POST[$k];
+//}
+
+
 if(InsertInto('formularz', 'ContactForm')){
     $_SESSION['ContactFormRES']=true;
 }else{
     $_SESSION['ContactFormRES']=false;
 }
-
-
 
 //    $Form = new Formularz();
 

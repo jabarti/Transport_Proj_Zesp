@@ -9,7 +9,6 @@
 ?>
 <?php
 $SESSFormName = 'ContactForm';
-
 Form('Contact', 'Form_Contact_Mod.php', 'Formularz zgłoszeniowy', 'ContactForm', 'head');
 CreateTextForm($arrFormContUR, false, true);
 CreateTextForm($arrFormCont);

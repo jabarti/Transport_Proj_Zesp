@@ -1,10 +1,10 @@
 /*@charset "utf-8";*/
 
 body {
-        background: url(backgrounds/logo.png) no-repeat top center fixed; 
+        /*background: url(backgrounds/logo.png) no-repeat top center fixed;*/ 
 
 	/*background: #EFDF95; */
-	/*background: white;*/
+	background: white;
 	width: 900px; 
 	height: 500px;
 	margin-left:auto;

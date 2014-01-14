@@ -7,21 +7,6 @@
  *
  * Author       Bartosz M. Lewiński <jabarti@wp.pl>
  * ************************************************* */
-/*$arrFormCont = array( 'PESEL' => '', 
-                        'Imie' => '', 
-                        'Imie2' => '', 
-                        'Nazwisko' => '', 
-                        'Adres_Ulica' => '',
-                        'Adres_Kod' => '',
-                        'Adres_Miasto' => '', 
-                        'Adres_Kraj' => '', 
-                        'telefon_kom' => '', 
-                        'telefon_kom2' => '', 
-                        'telefon_stacjonarny' => '',
-                        'FAX' => '', 
-                        'email' => '', 
-                        'Plec' => '', 
-                        'Data_urodzenia' => '');;/***/
 
 $SESSFormName = 'RegisterForm';
 
@@ -53,6 +38,7 @@ $arrPlecOption = array('M','K');
 
 Form('Register', 'RegisterPanel_Mod.php', 'Formularz rejestracyjny', 'RegisterForm', 'head');
 //CreateTextForm($arrFormContUR, true);
+CreateHiddenTextForm(array('ID_Osoba'=>''));
 CreateTextForm($arrFormContERR);
 ?>
 <th>Poniższe dane są niewymagane</th>
@@ -60,7 +46,7 @@ CreateTextForm($arrFormContERR);
 CreateTextForm($arrFormCont, false);
 CreateOptionForm('Plec', $arrPlecOption);
 ?>
-<script>
+<!--<script>
   $(function() {
     $( "#datepicker" ).datepicker();
   });
@@ -68,26 +54,38 @@ CreateOptionForm('Plec', $arrPlecOption);
         <tr>
             <td>Data urodzenia</td>
             <td ><input type="text" id="datepicker" name="data_czas" /><td>
-        </tr>
+        </tr>-->
 <!--        <tr>
             <td>Select your favorite color: </td>
             <td><input type="color" name="favcolor"></td>
         </tr>-->
-        <tr>
+<!--        <tr>
           <td>E-mail: </td>
           <td><input type="email" name="e-mail2"></td>
-        </tr>
+        </tr>-->
 <!--        <tr>
           <td>Quantity (between 1 and 5): </td>
           <td><input type="number" name="quantity" min="1" max="5"></td>
         </tr>-->
-        <tr>
+<!--        <tr>
           <td>range(between 1 and 10): </td>
           <td>0<input type="range" name="points" min="1" max="10">10</td>
-        </tr>
+        </tr>-->
+<!--        <tr>
+          <td>Select a time: </td>
+          <td><input type="time" name="usr_time"></td>
+        </tr>-->
+<?php
+    if (isset($_SESSION['upraw'])){
+       if($_SESSION['upraw'] == 'admin'){
+           CreateOptionForm('Klient/Pracownik', array('Pracownik', 'Klient'));
+        }
+    }
+
+?>
         <tr>
-            <td>To może regDate!</td>
-            <td ><input type="date" name="regDate" value=" <?php echo date('Y-m-d, H:i:s'); ?>" readonly/><td>
+            <td>To może RegDate!</td>
+            <td ><input type="date" name="RegDate" value=" <?php echo date('Y-m-d, H:i:s'); ?>" readonly/><td>
         </tr>
 <?php
 //CreateHiddenTextForm($arrFormContHidd);
@@ -104,6 +102,7 @@ if (isset($_SESSION[$SESSFormName.'RES'])){
 }else{
     echo 'Formularz nie wysłany';
 }
+
 
 
 

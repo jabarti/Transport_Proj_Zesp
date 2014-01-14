@@ -36,6 +36,7 @@ class Osoba { //extends Obiekt{
     protected $_email;
     protected $_Plec;
     protected $_Data_urodzenia;
+    protected $_RegDate;
     /**//*
     public $ID_Osoba;   
     public $PESEL;
@@ -66,44 +67,49 @@ class Osoba { //extends Obiekt{
    // public $fields = array('PESEL', 'Imie', 'Imie2', 'Nazwisko', 'Adres_Ulica','Adres_Kod','Adres_Miasto', 'Adres_Kraj', 'telefon_kom', 'telefon_kom2', 'telefon_stacjonarny','FAX', 'email', 'Plec', 'Data_urodzenia');
     /**/
     		/*$this->PESEL,$this->Imie,$this->Imie2,$this->Nazwisko,$this->Adres_Ulica,$this->Adres_Kod,$this->Adres_Miasto,$this->Adres_Kraj,
-		$this->telefon_kom,$this->telefon_kom2,$this->telefon stacjonarny,$this->FAX,$this->email,$this->Plec,$this->Data_urodzenia*/
+		$this->telefon_kom,$this->telefon_kom2,$this->telefon stacjonarny,$this->FAX,$this->email,$this->Plec,$this->Data_urodzenia, $this->RegDate*/
     /*
      * konstruktor klasy osoba
      * @param	Integer	id			
     //*/
 //    public function __construct(){
-//           $this->fields = array('ID_Osoba', 'PESEL', 'Imie', 'Imie2', 'Nazwisko', 'Adres_Ulica','Adres_Kod','Adres_Miasto', 
-//                                 'Adres_Kraj', 'telefon_kom', 'telefon_kom2', 'telefon_stacjonarny','FAX', 'email', 
-//                                 'Plec', 'Data_urodzenia');
+//   protected $_OsForm = array($_PESEL, $_Imie, $_Imie2,$_Nazwisko,$_Adres_Ulica,$_Adres_Kod,$_Adres_Miasto,$_Adres_Kraj,$_telefon_kom,$_telefon_kom2,$_telefon stacjonarny,$_FAX,$_email,$_Plec,$_Data_urodzenia, $_RegDate);
+     
    public $OsForm = array('ID_Osoba', 'PESEL', 'Imie', 'Imie2', 'Nazwisko', 'Adres_Ulica','Adres_Kod','Adres_Miasto', 
       'Adres_Kraj', 'telefon_kom', 'telefon_kom2', 'telefon_stacjonarny','FAX', 'email', 
-      'Plec', 'Data_urodzenia');
+      'Plec', 'Data_urodzenia','RegDate');
     
-   public function __construct($ID_Osoba=NULL, $PESEL=NULL, $Imie=NULL, $Imie2=NULL, $Nazwisko=NULL, $Adres_Ulica=NULL,$Adres_Kod=NULL,$Adres_Miasto=NULL, 
-                                 $Adres_Kraj=NULL, $telefon_kom=NULL, $telefon_kom2=NULL, $telefon_stacjonarny=NULL,$FAX=NULL, $email=NULL, 
-                                 $Plec=NULL, $Data_urodzenia=NULL){
+//   public function __construct($ID_Osoba=NULL, $PESEL=NULL, $Imie=NULL, $Imie2=NULL, $Nazwisko=NULL, $Adres_Ulica=NULL,$Adres_Kod=NULL,$Adres_Miasto=NULL, 
+//                                 $Adres_Kraj=NULL, $telefon_kom=NULL, $telefon_kom2=NULL, $telefon_stacjonarny=NULL,$FAX=NULL, $email=NULL, 
+//                                 $Plec=NULL, $Data_urodzenia=NULL, $RegDate=NULL){
        
-        $this->_ID_Osoba = $ID_Osoba;   
-        $this->_PESEL=$PESEL; 
-        $this->_Imie=$Imie; 				
-        $this->_Imie2=$Imie2; 				
-        $this->_Nazwisko=$Nazwisko; 		
-        $this->_Adres_Ulica=$Adres_Ulica; 	
-        $this->_Adres_Kod=$Adres_Kod; 		
-        $this->_Adres_Miasto=$Adres_Miasto; 
-        $this->_Adres_Kraj=$Adres_Kraj; 	
-        $this->_telefon_kom=$telefon_kom; 	
-        $this->_telefon_kom2=$telefon_kom2; 
-        $this->_telefon_stacjonarny=$telefon_stacjonarny; 	
-        $this->_FAX=$FAX; 		
-        $this->_email=$email; 			
-        $this->_Plec=$Plec; 				
-        $this->_Data_urodzenia=$Data_urodzenia; 
+   public function __construct($OsForm){
+//       var_dump($OsForm);
+//       echo '<br>$OsForm[\'PESEL\']: '.$OsForm['RegDate'];
+       
+ 
+        $this->_ID_Osoba=               $OsForm['ID_Osoba'];   
+        $this->_PESEL=                  $OsForm['PESEL'];		//PESEL; 
+        $this->_Imie=                   $OsForm['Imie'];		//Imie; 				
+        $this->_Imie2=                  $OsForm['Imie2'];		//Imie2; 				
+        $this->_Nazwisko=               $OsForm['Nazwisko'];		//Nazwisko; 		
+        $this->_Adres_Ulica=            $OsForm['Adres_Ulica'];		//Adres_Ulica; 	
+        $this->_Adres_Kod=              $OsForm['Adres_Kod'];		//Adres_Kod; 		
+        $this->_Adres_Miasto=           $OsForm['Adres_Miasto'];		//Adres_Miasto; 
+        $this->_Adres_Kraj=             $OsForm['Adres_Kraj'];		//Adres_Kraj; 	
+        $this->_telefon_kom=            $OsForm['telefon_kom'];		//telefon_kom; 	
+        $this->_telefon_kom2=           $OsForm['telefon_kom2'];		//telefon_kom2; 
+        $this->_telefon_stacjonarny=    $OsForm['telefon_stacjonarny'];		//telefon_stacjonarny; 	
+        $this->_FAX=                    $OsForm['FAX'];                 //FAX; 		
+        $this->_email=                  $OsForm['email'];		//email; 			
+        $this->_Plec=                   $OsForm['Plec'];		//Plec; 				
+        $this->_Data_urodzenia=         $OsForm['Data_urodzenia'];		//Data_urodzenia; 
+        $this->_RegDate=                $OsForm['RegDate'];		//RegDate;
            
-       if ($ID_Osoba == null){
-           
+       if ($this->_ID_Osoba == null){
+           echo '<br>ID_Osoba == null';
             $sql = 'SELECT `ID_Osoba`, `Nazwisko` FROM '.$this->table().' WHERE PESEL='.$this->_PESEL.';';
-            echo 'linia: '.__LINE__.' '.$sql;
+            echo '<br>linia: '.__LINE__.' '.$sql;
             $res = mysql_fetch_array(mysql_query($sql));
             $ID_Osoba = $res[0];
             echo '<br>This->Id = '.$ID_Osoba;
@@ -112,15 +118,14 @@ class Osoba { //extends Obiekt{
                 echo '<br>linia: '.__LINE__.' '.'<br>Jest już w bazie!!!';
                 
                 $this->UpdateData($ID_Osoba); // TODO
-          
-                
             }else{
                 echo '<br>linia: '.__LINE__.' '.'<br>NIE Jest';
                 $this->SaveData();
             }
-           }else{           // if id_osoba  != null
+       }else{           // if id_osoba  != null
+                echo '<br>==========================<br><b>ID_Osoba != null</b>';
                 $sql = 'SELECT * FROM '.$this->table().' WHERE `ID_Osoba`='.$this->_ID_Osoba.';';
-                //echo '<br>linia: '.__LINE__.' '.$sql;
+                echo '<br>linia: '.__LINE__.' '.$sql;
                 $res = mysql_fetch_array(mysql_query($sql));
                 
                 var_dump($res);
@@ -141,7 +146,7 @@ class Osoba { //extends Obiekt{
        
        $sql = 'INSERT INTO `osoba`(`PESEL`, `Imie`, `Imie2`, `Nazwisko`, `Adres_Ulica`, `Adres_Kod`, `Adres_Miasto`, 
                                       `Adres_Kraj`, `telefon_kom`, `telefon_kom2`, `telefon stacjonarny`, `FAX`, `email`, 
-                                      `Plec`, `Data_urodzenia`) 
+                                      `Plec`, `Data_urodzenia`, `RegDate`) 
                                       VALUES (  
                                         "'.$this->_PESEL.'", 
                                         "'.$this->_Imie.'",  				
@@ -157,7 +162,8 @@ class Osoba { //extends Obiekt{
                                         "'.$this->_FAX.'", 		
                                         "'.$this->_email.'", 			
                                         "'.$this->_Plec.'", 				
-                                        "'.$this->_Data_urodzenia.'"
+                                        "'.$this->_Data_urodzenia.'",
+                                        "'.$this->_RegDate.'"
                                         )'.';';
                 echo '<br>linia: '.__LINE__.' '.$sql;
                 mysql_query($sql) or die('<br>linia: '.__LINE__.' '.'NIe wykonany sql!!!');
@@ -180,7 +186,8 @@ class Osoba { //extends Obiekt{
                 `FAX`=                  "'.$this->_FAX.'", 		
                 `email`=                "'.$this->_email.'", 			
                 `Plec`=                 "'.$this->_Plec.'", 				
-                `Data_urodzenia`=       "'.$this->_Data_urodzenia.'"
+                `Data_urodzenia`=       "'.$this->_Data_urodzenia.'",
+                `RegDate`=              "'.$this->_RegDate.'"
               WHERE `ID_Osoba` = '.$ID_Osoba.';';
        
                 echo '<br>linia: '.__LINE__.' '.$sql;/**/
@@ -262,6 +269,8 @@ class Osoba { //extends Obiekt{
                 $email = $this->email;
                 $Plec = $this->Plec;
                 $Data_urodzenia = $this->Data_urodzenia;   
+                $RegDate = $this-RegDate;   
+                
                 
                 $sql1 = mysql_real_escape_string('SELECT * FROM '.$this->table().' WHERE PESEL='.$PESEL.'');
                 echo '<br>Oto ten SQL1 z osoba.class: '.$sql1.'<br>';
@@ -273,7 +282,7 @@ class Osoba { //extends Obiekt{
                     
                     $sql2 = 'INSERT INTO `osoba`(`ID_Osoba`, `PESEL`, `Imie`, `Imie2`, `Nazwisko`, `Adres_Ulica`,
                     `Adres_Kod`, `Adres_Miasto`, `Adres_Kraj`, `telefon_kom`, `telefon_kom2`, `telefon_stacjonarny`,
-                    `FAX`, `email`, `Plec`, `Data_urodzenia`) 
+                    `FAX`, `email`, `Plec`, `Data_urodzenia`, `RegDate`) 
                             VALUES ("",
                                     "'.$this->PESEL.'",
                                     "'.$this->Imie.'",
@@ -289,7 +298,10 @@ class Osoba { //extends Obiekt{
                                     "'.$this->FAX.'", 
                                     "'.$this->email.'",
                                     "'.$this->Plec.'",
-                                    "'.$this->Data_urodzenia.'")';
+                                    "'.$this->Data_urodzenia.'",
+                                    "'.$this->RegDate.'"
+                                        
+                                    )';
                     echo '<br>Oto ten SQL2 z osoba.class: '.$sql2.'<br>';
                     $mres = mysql_real_escape_string($sql2);
                     mysql_query($mres) or die ('zapytanie nie wykonane');
