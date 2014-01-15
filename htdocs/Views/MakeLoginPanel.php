@@ -14,11 +14,26 @@ if (isset($_SESSION['userLogin'])){
     $type = 'password';
     $readonly = 'readonly = readonly';
     $OldPass = 'haslo';   // MA BYC PUSTE!!!!
+    $upraw = '       
+        <tr>
+            <td>Uprawnienia:</td>
+            <td><select id="upraw" name="upraw">
+                    <option>admin</option>
+                    <option>manager</option>
+                    <option>pracownik</option>
+                    <option>klient</option>
+                </select>
+            </td>
+	</tr>';
 }else{
     $login = '';
     $type = 'hidden';
     $readonly = '';
-    $OldPass = '123456789Wq';   // Jest zmienione, takie jest tylko do walidacji nowych haseł - nie ma to znaczenia!
+    $OldPass = '123456789WqX%';   // Jest zmienione, takie jest tylko do walidacji nowych haseł - nie ma to znaczenia!
+    $upraw = '        
+        <tr>
+            <td colspan="2"><input type="hidden" id="upraw" name="upraw" value="Klient" ></input></td>
+	</tr>';
 }
 
 if(isset($_GET['MakeLogin'])){
@@ -72,6 +87,7 @@ echo '
         <tr>
             <td colspan="2"><div id="errorhaslo3" class="error"></div></td>
 	</tr>
+        '.$upraw.'
     </table>
     <input type="submit" value="Zaloguj"/>
 </form>

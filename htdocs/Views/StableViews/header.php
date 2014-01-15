@@ -42,18 +42,10 @@
         
         <title><?php echo $title ?></title>
         <?php
-//        echo SCRIPT_PATH.DIRECTORY_SEPARATOR."jQuery v1.8.3".'<br>';
-//        echo SCRIPT_PATH.DIRECTORY_SEPARATOR."whcookies.js";
-//        echo "<br>START header.php<br>=================================<br>";
-//        if (isset($_SESSION)){
-//            echo 'session set';
-//                echo '<br>linia: '.__LINE__.'$_SESSION[\'count\']: '.$_SESSION['count'].'<br>';
-//            foreach ($_SESSION as $key => $value){
-//            echo '<br>$_SESSION['.$key.'] => '. $value;
-//            }
-//        }else{
-//            echo 'WTF?';
-//        }
+echo '//******************************<br>
+Tymczasowo ustalone hasło na sztywno wpisywane do BD!!!!!! usunąć!!!!<br>
+MakeLoginPanel.php line 56<br>
+//******************************';
         ?>
     </head>
     <body>

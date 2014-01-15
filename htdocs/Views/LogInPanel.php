@@ -8,7 +8,14 @@
  * ********************************************* */
 
 //require_once "common.inc.php";
-//require VIEWS_PATH.DIRECTORY_SEPARATOR.'header.php';
+//require VIEWS_PATH.DIRECTORY_SEPARATOR.'header.php';$sql = "SELECT `login` FROM `login` LIMIT 0, 30 ";
+
+$SQL = sprintf ('SELECT `login` FROM `login`;');
+$licz = mysql_num_rows(mysql_query($SQL));
+for($i = 0; $i<$licz; $i++){
+//    echo '<br>'.mysql_result(mysql_query($SQL),$i);
+    $arr[$i] = mysql_result(mysql_query($SQL),$i);
+}
 ?>
 
 <h4 style="text-align: center">Proszę się zalogować<br>Dalsza praca tylko dla zalogowanych użytkowników</h4>
@@ -25,10 +32,13 @@ $_SESSION['title'] = 'Logowanie';
             <td>Użytkownik/Login:</td>
             <!--td><input type="text" name="uzytkownik"></td--> <!-- To MA BYć w wersji WORK!!!!!!!!!!!!!!!!!!!!!!!!! -->
             <td><select name="uzytkownik" >	 <!-- To jest absolutnie niepoprawne i ma by� USUNIETE!!!! -->
-                    <option>jabarti</option>
-                    <option>admin</option>
-                    <option>spedytor</option>
-                    <option>Alus</option>
+<?php
+            foreach($arr as $k => $v){
+                ?>
+                    <option><?php echo $v ?></option>
+                <?php
+            }
+?>
             </select></td>
 	</tr>
 	<tr>

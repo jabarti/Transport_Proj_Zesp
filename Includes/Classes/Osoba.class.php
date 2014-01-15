@@ -328,10 +328,6 @@ class Osoba { //extends Obiekt{
 		$this->$key = $value;
     }
     
-    	public function hideable() {
-		return true;
-	}
-    
 }
 
 ?>
