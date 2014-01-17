@@ -42,36 +42,71 @@ $passNEW = sha1($_POST['haslo2']);
 //    echo '<br>$_SESSION[user] == Bartosz Lewiński = false';
 //}
 if (isset($_SESSION['userLogin'])){
-$SQL = sprintf('SELECT `Password` FROM `login` WHERE `login` = "'.$_SESSION['userLogin'].'";');
-}
-echo '<br>SQL: '.$SQL;
-$passDB = mysql_result(mysql_query($SQL), 0);
+    $SQL = sprintf('SELECT `Password` FROM `login` WHERE `login` = "'.$_SESSION['userLogin'].'";');
 
-echo '<br>$passDB):'.$passDB;
-echo '<br>$passOLD:'.$passOLD;
-echo '<br>$passNEW'.$passNEW;
+    echo '<br>SQL: '.$SQL;
+    $passDB = mysql_result(mysql_query($SQL), 0);
+    echo '<br>$passDB): '.$passDB;
+} else {
+    $passDB = 0;
+    echo '<br>sztuczne $passDB): '.$passDB;
+}
+
+
+echo '<br>$passOLD: '.$passOLD;
+echo '<br>$passNEW: '.$passNEW;
 
 echo '//******************************<br>
 Tymczasowo ustalone hasło na sztywno wpisywane do BD!!!!!! usunąć!!!!<br>
-'.__FILE__.'  '.__LINE___.'<br>
+'.__FILE__.'  '.__LINE__.'<br>
 //******************************';
 // PONIŻSZE USUNĄĆ (Wystarczy zakomentować)!!!!!!!!!!!!!!!!!!!!!!!!!!!
 $passNEW = sha1('haslo');
 
 if ($passDB == $passOLD){
+    echo '<br>case 1';
     echo '<br>TO ZMIENIAM hasło z BD (Update)!';
     $SQL = sprintf('UPDATE `login` SET `Password`="'.$passNEW.'" WHERE `login` = "'.$login.'";');
     echo '<br>SQL:'.$SQL;
     mysql_query($SQL) or die('<br>===============<br>NIE udało sie ZMIENIĆ hasła<br>===============<br>');
 }
-else if ($passOLD == sha1('123456789WqX%')){            // jest równe fikcyjnemu haslu z MakeLoginPanel.php
+// jest równe fikcyjnemu haslu z MakeLoginPanel.php oraz '12345' to hasło oznaczjace utworzenie go przez admina
+else if ($passOLD == sha1('123456789WqX%') && $passNEW == sha1('12345')){            
+   echo '<br>case 2';
     echo '<br>TO TWORZE NOWE HASŁO!!!!! hasło!';
     $SQL = sprintf('INSERT INTO `login`(`ID_Osoba`, `login`, `Password`, `Uprawnienie`, `lastLogin`) 
                     VALUES ("'.$ID_Osoba.'", "'.$login.'", "'.$passNEW.'", "'.$upraw.'", "'.time().'");');
     echo '<br>SQL:'.$SQL;
     mysql_query($SQL) or die('<br>===============<br>NIE udało sie UTWORZYĆ hasła<br>===============<br>');
+   
+    if (isset($_SESSION['RegOsCase'])){
+        
+    }
+}
+// jest równe fikcyjnemu haslu z MakeLoginPanel.php oraz BRAK '12345' oznacza tworzebnie przez klienta new usra!!!
+else if ($passOLD == sha1('123456789WqX%')){            // jest równe fikcyjnemu haslu z MakeLoginPanel.php
+    echo '<br>case 3';
+    echo '<br>TO TWORZE NOWE HASŁO!!!!! hasło!';
+    $SQL = sprintf('INSERT INTO `login`(`ID_Osoba`, `login`, `Password`, `Uprawnienie`, `lastLogin`) 
+                    VALUES ("'.$ID_Osoba.'", "'.$login.'", "'.$passNEW.'", "'.$upraw.'", "'.time().'");');
+    echo '<br>SQL:'.$SQL;
+    mysql_query($SQL) or die('<br>===============<br>NIE udało sie UTWORZYĆ hasła<br>===============<br>');
+    
+    // Ponieważ to klient zapiszmy go jako klienta //
+    $SQL = sprintf('SELECT `ID_Klient` FROM `klient` WHERE `osoba_ID_Osoba` = '.$ID_Osoba.';');
+    if (mysql_result(mysql_query($SQL),0)){
+        echo '<br>JEST JUŻ TAKI KLIENT!!!';
+    }else{
+        echo '<br>NIE MA TAKIego KLIENTa, zapisuje!!!';
+        $SQL = sprintf('INSERT INTO `klient`(`osoba_ID_Osoba`) VALUES ("'.$ID_Osoba.'");');
+        mysql_query($SQL) or die ('<br>===============<br>NIE udało sie UTWORZYĆ Klienta why???<br>===============<br>');
+    }
+    $_SESSION['title'] = 'Przelogowanie | Re-Loggin';
+    header("Location: ".HTTP_HTDOCS.'Index.php?Main_view_name=login');
 }
 
 $_SESSION['title'] = 'Przelogowanie | Re-Loggin';
-header("Location: ".HTTP_HTDOCS.'Index.php?Main_view_name=login');
+
+//      header("Location: ".HTTP_HTDOCS.'Index.php?Main_view_name=login');
+//      header("Location: ".HTTP_HTDOCS.'Index.php');
 ?>

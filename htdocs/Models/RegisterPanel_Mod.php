@@ -51,7 +51,7 @@ switch ($whereGo){
     
     default: 
         echo '<br>Go to MAKE LOGIN PANEL';
-//        header("Location: ".HTTP_HTDOCS.'Index.php?Main_view_name=MakeLogin?RemoteCustomer=1');
+        header("Location: ".HTTP_HTDOCS.'Index.php?Main_view_name=MakeLogin&isFirstLog=1');
         break;
 }
 

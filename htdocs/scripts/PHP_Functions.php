@@ -57,6 +57,7 @@ function LoadMainView($Main_view_name){
         case 'login':
 //            echo '<br>linia: '.__LINE__.' from: '.__FILE__.' <br>Main View_name: '.$Main_view_name. " <-tak?";
 //            $_SESSION['title'] = 'Login | Logowanie';
+            session_destroy();
             return HDD_VIEWS_PATH.'LogInPanel.php';
         break;
     

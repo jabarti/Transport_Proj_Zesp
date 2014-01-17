@@ -13,8 +13,13 @@ echo '<br>============== $_SESSION ============================<br>';
 DisplayArr($_SESSION);
 echo '<br>================$$POST==========================<br>';
 DisplayArr($_POST);
+echo '<br>================GET==========================<br>';
+DisplayArr($_GET);
+
 
 $PracForm = $_POST;
 
 $Prac = new Pracownik($PracForm);
+
+header("Location: ".HTTP_HTDOCS.'Index.php?Main_view_name=MakeLogin&isFirstLog=1');
 ?>

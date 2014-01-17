@@ -14,8 +14,8 @@ echo 'jestem w RegPracPanel.php';
 
 if (isset($_SESSION)){
     DisplayArr($_SESSION);
-}
-
+}  
+    
 $id_os = $_SESSION['newID'];
 
 

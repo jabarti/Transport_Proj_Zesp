@@ -98,6 +98,7 @@ if(Logged()){
           </div>';
 }else{
     echo '<div id="LogInfo"><h1>NIE ZALOGOWANY</h1></div>';
+//    session_destroy();
 }
         require HDD_STABLEVIEWS_PATH.'buttons.php';
 
