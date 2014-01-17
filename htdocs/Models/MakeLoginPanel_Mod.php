@@ -55,7 +55,7 @@ echo '//******************************<br>
 Tymczasowo ustalone hasło na sztywno wpisywane do BD!!!!!! usunąć!!!!<br>
 '.__FILE__.'  '.__LINE___.'<br>
 //******************************';
-// PONIŻSZE USUNĄĆ!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// PONIŻSZE USUNĄĆ (Wystarczy zakomentować)!!!!!!!!!!!!!!!!!!!!!!!!!!!
 $passNEW = sha1('haslo');
 
 if ($passDB == $passOLD){

@@ -34,7 +34,7 @@
  
         <!--<meta http-equiv="Content-Language" content="PL" />-->
         
-	<meta http-equiv="refresh" content="300"/>  <!-- Odświeżanie co 5 minut i 30sek = 330 -->
+	<meta http-equiv="refresh" content="400"/>  <!-- Odświeżanie co 5 minut i 30sek = 330 -->
         
 	<!--<link rel="Stylesheet" type="text/css" href="<?php echo HTTP_STYLES_PATH.'reset.css'?>" />-->
 	<link rel="Stylesheet" type="text/css" href="<?php echo HTTP_STYLES_PATH.'style.css'?>" />

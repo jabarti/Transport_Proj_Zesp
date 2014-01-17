@@ -39,10 +39,12 @@ if(isset($_POST['uzytkownik'])&& isset($_POST['pass'])){
 //                        echo '$_COOKIE[\'user\']: '.$_COOKIE['user'];
                         unset($_COOKIE['user']);
                         
-                        session_destroy();
+//                        session_destroy();
                         
 //                        echo '$_COOKIE[\'user\']: '.$_COOKIE['user'];
                         unset($_GET['Main_view_name']);
+                        $_SESSION['wrongLogg']++;
+                        if ($_SESSION['wrongLogg'] >=3) setcookie('przerwa','Y',time()+60);
                         header('Location: '.$ref);   	// - wróci do strony z której było logowanie.
                     }
                     else if($mnr_Log_001 == 1){
@@ -104,7 +106,8 @@ if(isset($_POST['uzytkownik'])&& isset($_POST['pass'])){
                         echo '<br>$SQL_Log_005: '.$SQL_Log_005;
                         mysql_query($SQL_Log_005);
                         unset($_GET['Main_view_name']);
-                      header('Location: '.$ref.'?Main_view_name=main');   	// - wróci do strony z której było logowanie.
+                        unset($_SESSION['wrongLogg']);
+                        header('Location: '.$ref.'?Main_view_name=main');   	// - wróci do strony z której było logowanie.
                     }
 		}
 		else{

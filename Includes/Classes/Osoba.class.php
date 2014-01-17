@@ -144,7 +144,7 @@ class Osoba { //extends Obiekt{
    function SaveData(){
        echo '<br>linia: '.__LINE__.' '.'Wywołana funkcja SaveData()!!';
        
-       $sql = 'INSERT INTO `osoba`(`PESEL`, `Imie`, `Imie2`, `Nazwisko`, `Adres_Ulica`, `Adres_Kod`, `Adres_Miasto`, 
+       $sql = 'INSERT INTO `'.$this->table().'`(`PESEL`, `Imie`, `Imie2`, `Nazwisko`, `Adres_Ulica`, `Adres_Kod`, `Adres_Miasto`, 
                                       `Adres_Kraj`, `telefon_kom`, `telefon_kom2`, `telefon stacjonarny`, `FAX`, `email`, 
                                       `Plec`, `Data_urodzenia`, `RegDate`) 
                                       VALUES (  

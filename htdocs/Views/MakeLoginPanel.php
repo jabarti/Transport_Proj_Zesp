@@ -14,17 +14,21 @@ if (isset($_SESSION['userLogin'])){
     $type = 'password';
     $readonly = 'readonly = readonly';
     $OldPass = 'haslo';   // MA BYC PUSTE!!!!
-    $upraw = '       
+    $upraw = '        
         <tr>
-            <td>Uprawnienia:</td>
-            <td><select id="upraw" name="upraw">
-                    <option>admin</option>
-                    <option>manager</option>
-                    <option>pracownik</option>
-                    <option>klient</option>
-                </select>
-            </td>
+            <td colspan="2"><input type="hidden" id="upraw" name="upraw" value="Klient" ></input></td>
 	</tr>';
+//    $upraw = '       
+//        <tr>
+//            <td>Uprawnienia:</td>
+//            <td><select id="upraw" name="upraw">
+//                    <option>admin</option>
+//                    <option>manager</option>
+//                    <option>pracownik</option>
+//                    <option>klient</option>
+//                </select>
+//            </td>
+//	</tr>';
 }else{
     $login = '';
     $type = 'hidden';

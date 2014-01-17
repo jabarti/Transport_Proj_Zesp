@@ -27,6 +27,7 @@ if (isset($_SESSION[$SESSFormName.'RES'])){
     }else{
         echo '<p class="red"><b>ERROR Nie udało się skutecznie wysłać formularza!!!</b></p>';
     }
+    unset($_SESSION[$SESSFormName.'RES']);
 }else{
     echo 'Formularz nie wysłany';
 }

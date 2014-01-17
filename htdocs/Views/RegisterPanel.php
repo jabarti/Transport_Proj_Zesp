@@ -30,14 +30,9 @@ $arrPlecOption = array('M','K');
 //echo '<br> Leci foreach';
 //DisplayArr($arrPlecOption);
 //echo '<br>=================';
-
-//$arrFormContUR = array('');
-//$arrFormContHidd = array('');
-//$arrFormContTArea = array('');
  
 
-Form('Register', 'RegisterPanel_Mod.php', 'Formularz rejestracyjny', 'RegisterForm', 'head');
-//CreateTextForm($arrFormContUR, true);
+Form('Register', 'RegisterPanel_Mod.php', 'Formularz rejestracyjny', $SESSFormName, 'head');
 CreateHiddenTextForm(array('ID_Osoba'=>''));
 CreateTextForm($arrFormContERR);
 ?>
@@ -88,10 +83,8 @@ CreateOptionForm('Plec', $arrPlecOption);
             <td ><input type="date" name="RegDate" value=" <?php echo date('Y-m-d, H:i:s'); ?>" readonly/><td>
         </tr>
 <?php
-//CreateHiddenTextForm($arrFormContHidd);
-//CreateTextareaForm($arrFormContTArea, 25, 5);
+
 Form('Register', 'RegisterPanel_Mod.php', 'Formularz rejestracyjny', $SESSFormName, 'foot');
-//Form('Contact', 'Form_Contact_Mod.php', 'Formularz zgłoszeniowy', $SESSFormName, 'foot');
 
 if (isset($_SESSION[$SESSFormName.'RES'])){
     if($_SESSION[$SESSFormName.'RES']){
@@ -102,8 +95,5 @@ if (isset($_SESSION[$SESSFormName.'RES'])){
 }else{
     echo 'Formularz nie wysłany';
 }
-
-
-
 
 ?>

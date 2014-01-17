@@ -45,7 +45,7 @@ mb_internal_encoding('UTF-8') or die ('error');
     
 if (isset($_SESSION['user'])){
 //    echo "<br>Jest Session USER";
-    $expire=time()+60*1.5;			// 1.5min! - Odświarzanie musi być ustawione na dłuższy czas niż długość życia cookie!!!!!
+    $expire=time()+60*6;			// 1.5min! - Odświarzanie musi być ustawione na dłuższy czas niż długość życia cookie!!!!!
     setcookie("user", $_SESSION['user'], $expire);
     
     if (isset($_COOKIE['user'])){
@@ -60,13 +60,15 @@ if (isset($_SESSION['user'])){
 //    require_once HDD_STABLEVIEWS_PATH.'header.php';
 //    require HDD_STABLEVIEWS_PATH.'buttons.php';
     require_once HDD_SCRIPT_PATH.'PHP_Functions.php';
+    require_once HDD_SCRIPT_PATH.'PHP_FunctionsForm.php';
     require 'PagesInfo.php';
     require_once HDD_STABLEVIEWS_PATH.'header.php';
   
-    IncludeClassFile('Obiekt.class.php');
-    IncludeClassFile('Person.class.php');
+//    IncludeClassFile('Obiekt.class.php');
+//    IncludeClassFile('Person.class.php');
     IncludeClassFile('Osoba.class.php');
-    IncludeClassFile('Formularz.class.php');
+    IncludeClassFile('Pracownik.class.php');
+//    IncludeClassFile('Formularz.class.php');
     
 if (!isset($_COOKIE['user'])){          // SKOŃCZYŁ SIE CZAS SESJI USERA
     unsetter();                         // really works?
