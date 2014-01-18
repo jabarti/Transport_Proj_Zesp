@@ -94,7 +94,7 @@ if(Logged()){
     echo '<div id="LogInfo">
             <h1>ZALOGOWANY</h1>
             <p class="red">User: <b>'.$_SESSION['user'].'</b></p>
-            <p class="red">Rola: <b>'.$_SESSION['upraw'].'</b></p>
+            <p class="red">Rola: <b>'.$_SESSION['upraw_user'].'</b></p>
           </div>';
 }else{
     echo '<div id="LogInfo"><h1>NIE ZALOGOWANY</h1></div>';

@@ -10,14 +10,15 @@
 
 $SESSFormName = 'RegisterForm';
 
-$arrFormContERR = array('PESEL' => '', 
-                        'Imie' => '', 
-                        'Nazwisko' => '', 
-                        'Adres_Ulica' => '',
-                        'Adres_Kod' => '',
-                        'Adres_Miasto' => '', 
-                        'telefon_kom' => '', 
-                        'email' => '');
+$arrFormContERR = array(
+//                        'PESEL' => '', 
+                        'Imie' => 'Alabama', 
+                        'Nazwisko' => 'Kućko', 
+                        'Adres_Ulica' => 'OW1211',
+                        'Adres_Kod' => '42-200',
+                        'Adres_Miasto' => 'Czewa', 
+                        'telefon_kom' => '122212212212', 
+                        'email' => 'mail@mail.pl');
 
 $arrFormCont = array(   'Imie2' => '', 
                         'Adres_Kraj' => '', 
@@ -34,6 +35,13 @@ $arrPlecOption = array('M','K');
 
 Form('Register', 'RegisterPanel_Mod.php', 'Formularz rejestracyjny', $SESSFormName, 'head');
 CreateHiddenTextForm(array('ID_Osoba'=>''));
+            echo'<tr>
+                    <td><span id="red">*</span>PESEL: </td>
+                    <td><input type="text" id="PESEL" maxlength="11" name="PESEL" ></input> </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><div id="errorPESEL" class="error"></div></td>
+                </tr>';
 CreateTextForm($arrFormContERR);
 ?>
 <th>Poniższe dane są niewymagane</th>
@@ -71,8 +79,8 @@ CreateOptionForm('Plec', $arrPlecOption);
           <td><input type="time" name="usr_time"></td>
         </tr>-->
 <?php
-    if (isset($_SESSION['upraw'])){
-       if($_SESSION['upraw'] == 'admin'){
+    if (isset($_SESSION['upraw_user'])){
+       if($_SESSION['upraw_user'] == 'admin'){
            CreateOptionForm('Klient/Pracownik', array('Pracownik', 'Klient'));
         }
     }

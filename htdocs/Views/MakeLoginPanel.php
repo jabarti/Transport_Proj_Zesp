@@ -28,7 +28,7 @@ if (isset($_GET["isFirstLog"])){
 if ($isFirstLog == 0){
     echo '<br>KROK 0 isFirstLog == 0';
     if (isset($_SESSION['userLogin'])){         // Utworzona sesja userlogin - tzn jest zalogowany pracownik!!! może zarej. klienta albo innego pracownika
-        echo '<br>KROK 1 isFirstLog == 0 && SESS userLog SET';
+        echo '<br>KROK 1 isFirstLog == 0 && SESS userLog SET<br>Zmienia SWOJE HASŁO!!!';
         $_SESSION['RegOsCase'] = 1;
         
         $login = $_SESSION['userLogin'];
@@ -36,20 +36,9 @@ if ($isFirstLog == 0){
         $readonly = 'readonly = readonly';
         $readonly2 = '';
         $OldPass = 'haslo';   // MA BYC PUSTE!!!!
-//    $upraw = '        
-//        <tr>
-//            <td colspan="2"><input type="text" id="upraw" name="upraw" value="Klient" ></input></td>
-//	</tr>';
-    $upraw = '       
+    $upraw = '        
         <tr>
-            <td>Uprawnienia:</td>
-            <td><select id="upraw" name="upraw">
-                    <option>admin</option>
-                    <option>manager</option>
-                    <option>pracownik</option>
-                    <option>klient</option>
-                </select>
-            </td>
+            <td colspan="2"><input type="hidden" id="upraw" name="upraw" value="'.$_SESSION["upraw"].'" ></input></td>
 	</tr>';
     }else{
         echo '<br>KROK 2 isFirstLog == 0 && SESS userLog NIE SET';
@@ -64,27 +53,37 @@ if ($isFirstLog == 0){
             <td colspan="2"><input type="hidden" id="upraw" name="upraw" value="Klient" ></input></td>
 	</tr>';
     }
-} else {  // Pracownik rejestruje pracownika albo klienta!!!
+} else {  // Pracownik rejestruje pracownika!!!
     echo '<br>KROK 3 isFirstLog == 1';
     if (isset($_SESSION['userLogin'])){
-        echo '<br>KROK 4 isFirstLog == 1 && SESS userLog SET';
-        $_SESSION['RegOsCase'] = 4;
-        $login = '';
-        $type = 'hidden';
-        $readonly = '';
-        $readonly2 = 'readonly=readonly';
-        $OldPass = '123456789WqX%';   // Jest zmienione, takie jest tylko do walidacji nowych haseł - nie ma to znaczenia!
-    $upraw = '       
-        <tr>
-            <td>Uprawnienia:</td>
-            <td><select id="upraw" name="upraw">
-                    <option>admin</option>
-                    <option>manager</option>
-                    <option>pracownik</option>
-                    <option>klient</option>
-                </select>
-            </td>
-	</tr>';
+        if ($_SESSION['upraw'] == 'Klient'){
+            echo '<br> ************TO KLIENT';
+            $_SESSION['RegOsCase'] = 3;
+            echo '<br> **************TO nie KLIENT';
+            echo '<br>KROK 3a isFirstLog == 1 && SESS userLog SET<br>Nowy KLIENT - hasło 12345';
+            $login = '';
+            $type = 'hidden';
+            $readonly = '';
+            $readonly2 = 'readonly=readonly';
+            $OldPass = '123456789WqX%';   // Jest zmienione, takie jest tylko do walidacji nowych haseł - nie ma to znaczenia!
+            $upraw = '        
+                <tr>
+                    <td colspan="2"><input type="hidden" id="upraw" name="upraw" value="Klient" ></input></td>
+                </tr>';
+        }else{
+            echo '<br> **************TO nie KLIENT';
+            $_SESSION['RegOsCase'] = 4;
+            echo '<br>KROK 3b isFirstLog == 1 && SESS userLog SET<br>Nowy Pracownik - hasło 12345';
+            $login = '';
+            $type = 'hidden';
+            $readonly = '';
+            $readonly2 = 'readonly=readonly';
+            $OldPass = '123456789WqX%';   // Jest zmienione, takie jest tylko do walidacji nowych haseł - nie ma to znaczenia!
+            $upraw = '        
+                <tr>
+                    <td colspan="2"><input type="hidden" id="upraw" name="upraw" value="Pracownik" ></input></td>
+                </tr>';
+        }
 } else {
     echo '<br>KROK 5 isFirstLog == 1 && SESS userLog NIE SET<br>//NOWY klient, Pierwszy LOG';  //NOWY klient, Pierwszy LOG
     $_SESSION['RegOsCase'] = 5;
@@ -170,14 +169,14 @@ echo '
 	</tr>
 	<tr>
             <td>Utwórz hasło:</td>
-            <td><input type="password" id="haslo2" name="haslo2" '.$readonly2.'value="'.$NewPass1.'"></td>
+            <td><input type="password" id="haslo2" name="haslo2" '.$readonly2.' value="'.$NewPass1.'"></td>
 	</tr>
         <tr>
             <td colspan="2"><div id="errorhaslo2" class="error"></div></td>
 	</tr>
         <tr>
             <td>Powtórz hasło:</td>
-            <td><input type="password" id="haslo3" name="haslo3" '.$readonly2.'value="'.$NewPass2.'"></td>
+            <td><input type="password" id="haslo3" name="haslo3" '.$readonly2.' value="'.$NewPass2.'"></td>
 	</tr>
         <tr>
             <td colspan="2"><div id="errorhaslo3" class="error"></div></td>

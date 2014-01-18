@@ -56,8 +56,8 @@ if(isset($_POST['uzytkownik'])&& isset($_POST['pass'])){
                         echo 'linia: '.__LINE__.' '.$SQL_Log_002."<br>";
                         $mq_Log_002 = mysql_query($SQL_Log_002, $DBConn) or die('<br>linia: '.__LINE__.' Wykonanie zapytania nie powiodło się : ' . mysql_error());
                         $mr_Log_002 = mysql_result($mq_Log_002, 0, 0);
-                        $_SESSION['upraw'] = $mr_Log_002;
-                        echo $_SESSION['upraw'];
+                        $_SESSION['upraw_user'] = $mr_Log_002;
+                        echo $_SESSION['upraw_user'];
 //// czy to SQL 3 w ogóle potrzebne???
 ///*SQL 03*/		$SQL_Log_003 = sprintf("SELECT CONCAT(`imie`,' ', `nazwisko`) FROM `osoba` os join `pracownik` pr ON (os.`ID_Osoba` = pr.`osoba_ID_Osoba`)
 //						WHERE `ID_Osoba` = '".mysql_result($mq_Log_001, 0, 0)."'");

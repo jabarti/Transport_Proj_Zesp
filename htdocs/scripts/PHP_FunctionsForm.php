@@ -29,7 +29,7 @@ function Form($id, $file, $title, $name, $place, $method='post'){
     }
 }
 
-function CreateTextForm($array, $checkerror = true, $readonly=false){
+function CreateTextForm($array, $checkerror = true, $readonly=false, $sess=true){
     
     foreach ($array as $key => $value){
         if($readonly){
@@ -38,7 +38,7 @@ function CreateTextForm($array, $checkerror = true, $readonly=false){
             $readonly='';
         }
         
-        if (isset($_SESSION[$key])){
+        if ($sess && isset($_SESSION[$key])){
             $value = $_SESSION[$key];
 //            unset($_SESSION[$key]);
         }

@@ -40,18 +40,20 @@ if (isset($_POST['RegisterForm'])){
 switch ($whereGo){
     case 'Pracownik':
         echo '<br>Go to PRACOWNIK';
-//        header("Location: ".HTTP_VIEWS_PATH.'RegPracPanel.php');
-        header("Location: ".HTTP_HTDOCS.'Index.php?Main_view_name=regPrac');
+//          header("Location: ".HTTP_VIEWS_PATH.'RegPracPanel.php');
+            header("Location: ".HTTP_HTDOCS.'Index.php?Main_view_name=regPrac');
         break;
     
     case 'Klient':
-        echo '<br>Go to KLIENT';
-//        header("Location: ".HTTP_VIEWS_PATH.'RegKlienPanel.php');
+        echo '<br>Go to MAKE LOGIN PANEL for klient';
+            $_SESSION['upraw'] = 'Klient';
+//          header("Location: ".HTTP_VIEWS_PATH.'RegKlienPanel.php');
+            header("Location: ".HTTP_HTDOCS.'Index.php?Main_view_name=MakeLogin&isFirstLog=1');
         break;
     
     default: 
-        echo '<br>Go to MAKE LOGIN PANEL';
-        header("Location: ".HTTP_HTDOCS.'Index.php?Main_view_name=MakeLogin&isFirstLog=1');
+            echo '<br>Go to MAKE LOGIN PANEL';
+            header("Location: ".HTTP_HTDOCS.'Index.php?Main_view_name=MakeLogin&isFirstLog=1');
         break;
 }
 

@@ -10,14 +10,16 @@
 require_once "common.inc.php";
 
 if(Logged()){
-    switch($_SESSION['upraw']){
+    switch($_SESSION['upraw_user']){
         case 'admin':
+            echo "admin";
                  $view_name = array('CompInfo', 'OtherInfo', 'Prices');
 //                 $arrFormCont = array('imie' => '','nazwisko'=> '', 'email' => '', 'phone' => '');
 //                 $buttons = array('localhost', 'glowna', 'register', 'loggin');
         break;
     
         case 'klient':
+            echo "klient";
                  $view_name = array('CompInfo', 'OtherInfo', 'Form_Contact', 'Prices');
             
                  $arrFormContUR = array('imie' => '','nazwisko'=> '');
@@ -27,6 +29,7 @@ if(Logged()){
         break;   
     
         case 'pracownik':
+            echo "pracownik";
                  $view_name = array('CompInfo', 'OtherInfo', 'Prices');
         break;
     
